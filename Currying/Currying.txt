@@ -1,0 +1,21 @@
+1. js concept of functional programming in which we can pass functions as arguments (callbacks) and return functions without any side effects (changes to program states)
+2. we can transform a function with multiple arguments into a sequence of nesting functions
+
+// normal function
+sum(1,2,3) // 6
+
+// currying function
+sum(1)(2)(3) // 6
+
+// variations of currying (all of them return 6)
+1.
+sum(1)(2)(3)
+sum(1,2)(3)
+sum(1)(2,3)
+sum(1,2,3)
+
+2.
+sum(1)(2)(3)()
+sum(1,2)(3)()
+sum(1)(2,3)()
+sum(1,2,3)()
