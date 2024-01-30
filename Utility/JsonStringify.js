@@ -2,19 +2,19 @@
 
 // console.log(JSON.stringify([{ x: 5, y: 6 }])); // [{"x": 5, "y": 6}]
 
-const isArr = (data) => {
+const checkIsArr = (data) => {
     return Array.isArray(data);
 }
 
-const isObj = (data) => {
-    return !isArr(data) && typeof data === 'object'
+const checkIsObj = (data) => {
+    return !checkIsArr(data) && typeof data === 'object'
 }
 
 const stringify = (json) => {
     function mineStringify(data, modObj) {
-        const isArr = isArr(data);
-        const isObj = isObj(data);
-        if (isArray) {
+        const isArr = checkIsArr(data);
+        const isObj = checkIsObj(data);
+        if (isArr) {
             for (let arrItem of data) {
                 return mineStringify(arrItem, modObj);
             }
