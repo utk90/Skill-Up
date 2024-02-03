@@ -1,0 +1,6 @@
+>> The prototype pattern allows us to easily let objects access and inherit properties from other objects.
+Since the prototype chain allows us to access properties that aren't directly defined on the object itself, we can avoid duplication of methods
+and properties, thus reducing the amount of memory used.
+
+>> Object.create is a simple way to let objects directly inherit properties from other objects, by specifying the newly created
+object's prototype. The new object can access the new properties by walking down the prototype chain.

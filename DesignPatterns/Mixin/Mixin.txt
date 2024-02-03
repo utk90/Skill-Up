@@ -1,0 +1,24 @@
+>> Mixing allows us to easily add functionality to objects without inheritance by injecting functionality into an object's prototype.
+
+>> Modifying an object's prototype is seen as bad pratice, as it can lead to prototype pollution and a level of uncertainty regarding the origin of our functions
+
+>> object.assign()
+1. provides shallow copying (only properties and methods) and it will override the method and property declared
+2. assigns properties directly on the specified object
+3. returns target object
+
+>> object.create()
+1. provides deep copying provides prototype chain 
+2. creates a new object with specified [[Prototype]]
+3. returns empty object
+
+var target1 = {}, target2 = {}
+var obj1 = Object.create(target1, {myProp: {value: 1}});
+var obj2 = Object.assign(target2, {myProp: 1});
+
+obj1 !== target1 (true)
+obj2 === target2 (true)
+
+prototypical chains of obj1 and obj2 look like
+obj1 -> target1 -> Object.prototype -> null
+obj2 ------------> Object.prototype -> null

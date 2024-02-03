@@ -1,0 +1,38 @@
+Mounting
+1. Constructor
+-> state initialization
+-> event handler bind
+
+2. static getDerivedSateFromProps(props, state)
+ -> its main function is to ensure that the state and props are in sync for when it's required
+ -> whatever object is returned from this method will update the state
+
+3. render
+
+4. componentDidMount
+-> can be used for async. calls like API calls, setTimeout's or to add event listeners  etc.
+
+
+
+Updating
+1. getDerivedSateFromProps
+
+2. shouldComponentUpdate
+-> used to stop unnecessary renders
+-> if (nextProps !== currentProps || nextState !== currentSate)
+        Component will re-render
+   else
+        COmponent will not re-render
+
+3. getSnapshotBeforeUpdate
+-> method is invoked just before the DOM is being rendered.
+-> used to store the previous values of the state after the DOM is updated
+-> used to compare the props, state or elements before and after updation
+
+
+
+Unmounting
+1. componentWillUnmount
+-> allows us to execute the React code when the component gets destroyed or unmounted from the DOM.
+-> called before the component node gets unmounted
+-> eg: remove event listeners, clear timeouts
