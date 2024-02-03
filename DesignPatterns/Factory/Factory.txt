@@ -1,0 +1,5 @@
+1. With factory pattern we can use factory functions in order to create new objects.
+
+2. A function is a factory function when it returns a new object without the use of the new keyword
+
+3. Useful if we're creating relatively complex and configurable objects. 

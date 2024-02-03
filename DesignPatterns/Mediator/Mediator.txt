@@ -1,0 +1,4 @@
+1. Mediator pattern makes it possible for components to interact with each other through a central point: the mediator.
+
+2. Instead of letting every object talk directly to the other objects, resulting in a many-to-many relationship
+the object's requests get handled by the mediator. The mediator procecsses this request, and sends it forward to where it needs to be

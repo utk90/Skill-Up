@@ -1,0 +1,7 @@
+1. Flyweight pattern is a useful way to conserve memory when we're creating a large number of similar objects.
+
+2. Eg. A library usually doesn't have just one copy of a book: it usually has multiple copies of the same book
+It wouldn't be very useful to create a new book instance each time if there are multiple copies of the exact same book.
+Instead, we want to create multiple instances of the Book constructor, that represent a single book.
+
+3. Useful when you're creating a huge number of objects, which could potentially drain all available RAM.

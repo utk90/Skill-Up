@@ -1,0 +1,16 @@
+>> With the observer pattern, we can subscribe certain objects, the observers, to another object, called the observable.
+Whenever an event occurs, the observable notifies all its observers!
+
+>> observable object usually contains 3 important parts:
+1. observers: an array of observers that will get notified Whenever a specific event occurs
+2. subscribe: a method in order to add observers to the observers list
+3. unsubscribe: a method in order to remove observers from the observers list
+4. notify: a method to notify all observers whenever a specific event occurs 
+
+>> Observer pattern can be very useful when working with asynchronous, event-based data
+
+>> To get notified when certain data has finished download, or whenever users sent new messages to a message board and all other members should get notified
+
+>> Using observer pattern is a great way to enforce separation of concerns and the single-responsibility principle. The observer obejects aren't tightly coupled to the observable object, and can be de(coupled) at any time.
+
+>> If an observer becomes too complex, it may cause performance issues when notifying all subscribers
