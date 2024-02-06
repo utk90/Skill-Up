@@ -1,6 +1,6 @@
 import { Component } from 'react';
 
-class ClassComponent extends Component {
+class LifeCycleClassComponent extends Component {
     constructor(props) {
         super(props);
         console.log('>>>>>>> constructor triggered');
@@ -59,4 +59,4 @@ class ClassComponent extends Component {
     }
 }
 
-export default ClassComponent;
+export default LifeCycleClassComponent;

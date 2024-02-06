@@ -1,0 +1,105 @@
+1. JSX
+-> allows to write HTML elements in JS and place them in the DOM without using createElement() and/or addChild().
+-> JSX converts HTML tags into react elements
+Eg.
+const myElement = <h1>I love JSX</h>;
+const root = ReactDOM.createRoot(document.getElementById('root));
+root.render(myElement);
+-> logic and markup of a component can be written inside a single .jsx file which is easy to maintain and debug
+
+2. role of type attribute in script tags
+-> type attribute specifies the type of the script
+-> default value is "text/javascript"
+    (i) type/ecmascript -> indicates that the script is following the ECMAScript standards
+    (ii) module -> tells the browser that the script is a module that can import or export other files or modules inside it
+    (iii) text/babel -> indicates that the script is a babel type and require babel to transpile it
+    (iv) text/typescript -> script is written in typescript
+
+3. {TitleComponent} vs {<TitleComponent/>} vs {<TitleComponent></TitleComponent>} in JSX
+    (i) {TitleComponent} -> whatever inside {} is treated as a javascript expression or variable inside it
+    (ii) <TitleComponent/> -> TitleComponent is treated as a function that is returning a JSX value
+    (iii) <TitleComponent></TitleComponent> -> <TitleComponent /> and <TitleComponent></TitleComponent> are equivalent only when
+         <TitleComponent/> has no child components. The opening and closing tags are created to include the child components
+    Eg.
+    <TitleComponent>
+        <FirstChildComponent/>
+        <SecondChildComponent/>
+        <ThirdChildCompoent/>
+    </TitleComponent>
+
+4. ES6 in React
+-> not mandatory to use but highly recommended
+-> cover features like: classes, arrow functions, variables(let, const).
+-> ECMAScript was created to standaradize javascript
+-> ES6 is the 6th version of ECMAScript, it was published in 2015
+
+5. <React.Fragment></React.Fragment> and <></>
+-> <React.Fragment></React.Fragment> allows you to return multiple elements from a React component by allowing you to group a list of children without adding extra nodes to the DOM.
+-> <></> is a shorthand tag fir React.Fragment
+-> <></> does not support the key attribute
+
+6. Reconciliation in React
+-> process through which React updates the Browser DOM and makes React work faster
+-> React uses diffing algorithm so that component updates are predictable and faster
+-> React first calculates the difference between the RealDOM and copy of DOM (VirtualDOM) when there's an update of components.
+-> React stores the copy of Browser DOM which is called VirtualDOM.
+-> when changes are made, React creates a new VirtualDOM and compares it with the previous one.
+-> comparison is done by Diffing algorithm.
+-> React compares the VirtualDOM with RealDOM, finds out the changed nodes and updates only changed nodes in RealDOM leaving the rest nodes as it is. This process is called Reconciliation.
+
+7. React Fiber
+-> used to render a system faster, smoother and smarter.
+-> Fiber reconciler is the default reconciler for React 16 and above
+-> Fiber is aynchronous
+-> Adds capability to
+    (i) pause, resume and restart rendering work on components as new updates come in
+    (ii) reuse previously completed work and even abort it if not needed
+    (iii) split work into chunks and prioritizze taks based on importance
+
+8. Keys in React
+-> "key" is a unique identifier and special attribute needed to create list of elements in React.
+-> used to identify which items in the list are changed, updated or deleted.
+Eg.
+<ul>
+    <li key={0}>1</li>
+    <li key={1}>2</li>
+    <li key={2}>3</li>
+</ul>
+
+9. index as keys
+-> yes, we can use index as keys (not recommended)
+-> incase the order of items change, it can negatively impact performance and may cause issues with component state
+-> keys are taken from each object which is being rendered
+-> there might be a possibility that if we modify the incoming data React may render them in unusal order
+Eg. items[A,B,C] if X is added at the beginning [X,A,B,C] then key of A would change from 0 to 1, in this case React won't be able to efficiently update the DOM
+-> if items have unique identifiers (like an 'id'), it's better to use those as keys.
+
+10. props is React
+-> properties used as arguments to pass data into React components (from parent to child)
+
+11. Config driven UI
+-> are based on configurations of the data application receives.
+-> common and basic approach to interact with the user
+-> Eg. Login form, most the forms get frequent updates as the requirements grow in terms of Form validations, dropdown options or design changes
+
+12. Virtual DOM vs Real DOM
+-> DOM represents application UI, whenever changes are made in the application, DOM gets updated and the user is able to visualize the changes
+-> DOM is an interface that allows scripts to update the content, style and structure of the document
+-> VirtualDOM
+    (i) light weight abstraction of the DOM, that can be updated without affecting the actual DOM
+    (ii) has same properties as the RealDOM but doesn't have the ability to write to the screen like the RealDOM
+    (iii) reconciliation is a process to compare and keep in sync the two files (Real and Virtual DOM), Diffing algorithm is a technique of reconciliation which is used by React
+    (iv) can produce about 200,000 VirtualDOM nodes/second
+-> RealDOM
+    (i) DOM represents the webpage often called a document with a logical tree and each branch of the tree ends in a node and each node contains object programmers can modify
+        the content of the document using a scripting language like javascript
+    (ii) changes and updates to the DOM are fast because of its tree-like structure but after chaneges, the updated element and its children
+        have to be re-rendered to update the application UI so the re-rendering of the UI which make the DOM slow, all the UI components you need to be rendered for every DOM update
+        so RealDOM would render the entire the list and not only those item that receives the update
+
+13. React Hooks
+->  introduced in React version 16.8
+-> simple JS functions that we can use to isolate the reusable part from a functional component
+-> can be stateful and can manage side-effects
+-> enforces code reusability across the components
+
