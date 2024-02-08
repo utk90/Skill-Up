@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-// import HookContext from './components/AllHooks/HookContext';
+import Context from './components/Context';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 // const header = React.createElement('div', { 'className': 'title' },
@@ -26,5 +26,6 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <App />
 )
-// <HookContext>
-// </HookContext>
+
+// <Context>
+// </Context>

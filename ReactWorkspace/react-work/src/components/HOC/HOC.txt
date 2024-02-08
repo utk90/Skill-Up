@@ -1,0 +1,2 @@
+1. accepts function as an argument and returns a function
+2. enforces code reusability

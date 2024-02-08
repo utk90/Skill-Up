@@ -1,5 +1,5 @@
 import { useContext } from "react"
-import HookDemo from "./HookContext";
+import HookDemo from "../Context";
 
 const HookUseContext = () => {
     const [count, setCount] = useContext(HookDemo);

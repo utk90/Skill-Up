@@ -2,7 +2,7 @@ import { createContext, useState } from "react"
 
 export const HookDemo = createContext();
 
-const HookContext = ({ children }) => {
+const Context = ({ children }) => {
     const [count, setCount] = useState({
         id: 'abcd',
         num: 1
@@ -11,4 +11,4 @@ const HookContext = ({ children }) => {
     <HookDemo.Provider value={{ count, setCount }}>{children}</HookDemo.Provider>
 }
 
-export default HookContext;
+export default Context;
