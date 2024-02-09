@@ -3,6 +3,9 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import Context from './components/Context';
+import { BrowserRouter } from 'react-router-dom';
+import RouterDOM from './components/ReactRouterDOM/RouterDOM';
+import Layout from './components/Layout/Layout';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 // const header = React.createElement('div', { 'className': 'title' },
@@ -22,6 +25,14 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 // root.render(
 //   header
 // );
+
+// root.render(
+//   <BrowserRouter>
+//     <Layout>
+//       <RouterDOM />
+//     </Layout>
+//   </BrowserRouter>
+// )
 
 root.render(
   <App />

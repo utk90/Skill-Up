@@ -5,6 +5,8 @@ import { HookUseContext, HookUseCallback, HookUseEffect, HookUseMemo, HookUseRef
 import HookUseLayoutEffect from './components/AllHooks/HookUseLayoutEffect';
 import UsersList from './components/HOC/UsersList';
 import TodosList from './components/HOC/TodosList';
+import Start from './components/LazyLoading/Start';
+import Page from './components/Modal/Page';
 
 function App() {
   // const { data, error, loading } = useFetchAPI("https://jsonplaceholder.typicode.com/users");
@@ -28,9 +30,13 @@ function App() {
         {/* <HookUseReducer /> */}
         {/* <HookUseLayoutEffect /> */}
         {/* <HookUseImperativeHandle /> */}
-        <UsersList />
-        <TodosList />
-      </header>
+        {/* <UsersList />
+        <TodosList /> */}
+        {/* <Start /> */}
+        {/* </header> */}
+        {/* {FOR MODAL} */}
+        <Page />
+      </header >
     </div>
   );
 }
