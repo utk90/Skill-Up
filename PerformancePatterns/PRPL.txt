@@ -1,0 +1,53 @@
+PRPL is an acronym for:
+
+Push (or preload) the most important resources
+Render the initial route as soon as possible
+Pre-cache remaining assets
+Lazy load other routes and non-critical assets
+
+1. Introduction:
+Challenge: Ensure application performance on low-end devices and in regions with poor internet connectivity.
+Solution: PRPL Pattern, focusing on efficient resource loading.
+
+2. PRPL Pattern Focuses on Four Key Performance Considerations:
+Efficiently pushing critical resources to minimize roundtrips and reduce loading time.
+Rendering the initial route as soon as possible for an improved user experience.
+Pre-caching assets for frequently visited routes to minimize server requests and enable a better offline experience.
+Lazily loading routes or assets that aren't frequently requested.
+
+3. HTTP/2 Improvements:
+HTTP/2 introduced bidirectional streams, solving head-of-line blocking issues in HTTP/1.1.
+Server push: The server can automatically push additional resources without explicit client requests.
+
+4. Server Push Considerations:
+Pushed resources are not HTTP cache-aware.
+PRPL Pattern uses service workers to cache pushed resources after the initial load.
+
+5. Preload Resource Hint:
+Developers can help browsers identify critical resources by adding a preload resource hint.
+Preloading optimizes the time it takes to load critical resources for the current route.
+
+6. PRPL Pattern Optimization Strategies:
+Code-splitting applications into small, performant bundles.
+Bundles enable users to load only the necessary resources when needed, maximizing cachability.
+Caching considerations to avoid unnecessary roundtrips and make the application offline-friendly.
+
+7. App Shell and Main Entry Point:
+PRPL often uses an app shell as the main entry point, containing most of the application's logic shared between routes.
+App shell includes the application's router for dynamic resource requests.
+
+8. Dynamically Requesting Minimal Resources:
+Ensure that bundles requested contain the minimal necessary resources and are cachable.
+Considerations for bundling or working with unbundled modules based on performance.
+
+9. Background Fetching for Frequently Visited Routes:
+Install a service worker after the initial route is loaded to fetch resources for frequently visited routes in the background.
+Enhances user experience by quickly retrieving required resources from cache for frequently visited routes.
+
+10. Dynamic Import for Less Frequently Visited Routes:
+- Resources for routes that aren't as frequently visited can be dynamically imported, optimizing performance.
+In Essence:
+
+PRPL focuses on optimizing the initial load, ensuring no other resources get requested or rendered before the initial route is visible.
+Service workers play a crucial role in caching resources for frequently visited routes and enabling background fetching for a seamless user experience.
+The pattern emphasizes efficient resource loading, making applications globally accessible and performant in challenging conditions.

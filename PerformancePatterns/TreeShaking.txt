@@ -1,0 +1,45 @@
+1. Introduction:
+Tree shaking is the process of removing dead code from a JavaScript bundle, reducing its size and improving performance.
+
+2. Objective:
+Eliminate code that will never be used in the application to prevent unnecessary loading of data.
+
+3. Concepts:
+Tree shaking treats the application and its dependencies as an abstract syntax tree (AST).
+Each node in the AST represents a dependency, and tree shaking aims to optimize the tree by removing unused code.
+Input files are treated as a graph, and tree shaking is a graph traversal starting from the entry point.
+
+4. Side Effects:
+Every component/module can declare symbols and have side effects.
+Tree shaking distinguishes between code with side effects and code without side effects.
+Modules with side effects, even if their exports are not directly used, cannot be tree-shaken.
+
+5. ES2015 Module Syntax:
+Only modules defined with the ES2015 module syntax (import and export) can be tree-shaken.
+The way modules are imported specifies whether they can be tree-shaken.
+
+6. Graph Traversal:
+Tree shaking begins by visiting parts of the entry point file with side effects.
+It traverses the edges of the graph, marking traversed paths for inclusion in the final bundle.
+The JavaScript bundle includes only the parts reached during the traversal, leaving out unused pieces.
+
+7. Import Example:
+Modules that are imported but not used in the code will be excluded from the bundle.
+Example: If only the read function from utilities.js is imported and used, the nap function won't be included.
+
+8. Side Effects Example:
+Modules with side effects, impacting the global scope during execution, cannot be tree-shaken.
+Side effects can include polyfills or global stylesheets.
+Special behavior during import prevents tree shaking if the module has exported values.
+
+9. Webpack Documentation:
+The Webpack documentation provides a clear explanation of tree shaking and how to avoid breaking it.
+In Essence:
+
+Tree shaking optimizes JavaScript bundles by removing unused code.
+It focuses on modules with side effects, import syntax, and graph traversal to determine the code to include in the final bundle.
+Webpack and other module bundlers automatically handle tree shaking, improving overall application performance.
+
+
+
+

@@ -1,0 +1,11 @@
+The content discusses the concept of static import in JavaScript using the ES2015 import syntax. 
+The example provided involves a chat application where various components are statically imported and bundled into the initial bundle by Webpack. 
+The article emphasizes the impact of a large bundle size on application loading time and introduces the idea of dynamic imports to improve 
+loading efficiency by importing modules only when needed.
+
+Crux:
+
+1. Static Import: The article introduces static import using the import keyword, which includes modules in the initial bundle.
+2. Example: A chat application is used as an example where components like UserProfile, ChatList, and ChatInput are statically imported.
+3. Bundle Size: The impact of a large bundle size on application loading time is highlighted, and the initial bundle is shown after Webpack builds the application.
+4. Dynamic Import: The concept of dynamic import is introduced as a solution to load modules only when required, improving loading efficiency.

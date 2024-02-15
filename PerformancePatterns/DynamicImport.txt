@@ -1,0 +1,18 @@
+The content introduces the concept of dynamic imports in JavaScript to improve application loading efficiency.
+Using a chat application example, it discusses how dynamically importing modules, such as EmojiPicker, only when needed can significantly reduce 
+the initial bundle size. The article demonstrates the implementation of dynamic imports using React Suspense and provides an alternative approach 
+using the loadable-components library for server-side rendering (SSR) applications.
+
+Crux:
+
+1. Problem Statement: The article addresses the issue of unnecessary inclusion of components in the initial bundle, impacting application loading time.
+2. Dynamic Import: Dynamic import of modules, especially components like EmojiPicker, is suggested to be performed only when required for rendering 
+or user interaction.
+3. React Suspense: The implementation of dynamic imports is shown using React Suspense, allowing the application to render faster while deferring the 
+import of specific components.
+4. Bundle Size Reduction: By dynamically importing EmojiPicker, the initial bundle size is reduced from 1.5MiB to 1.33 MiB, resulting in a faster
+ initial load time.
+5. Loadable Components: An alternative library, loadable-components, is introduced for server-side rendering (SSR) applications that do not currently 
+support React Suspense. It is also highlighted as useful for client-side rendering (CSR) applications.
+
+Note: The code snippets provided demonstrate the implementation of dynamic imports and the impact on bundle sizes.

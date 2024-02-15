@@ -1,0 +1,24 @@
+The content revolves around the challenges and strategies associated with optimizing the loading sequence in web applications. 
+It emphasizes the importance of resource prioritization, provides recommendations for handling critical resources, and proposes an 
+ideal loading sequence for improved performance and user experience. The role of tools like the ScriptLoader for Next.js is highlighted 
+to assist in achieving the desired loading priorities. Overall, the aim is to provide a comprehensive guide for developers to enhance the 
+loading sequence and meet Core Web Vitals metrics.
+
+1. First Content Paint
+2. Largest contentful paint
+3. First Input delay
+
+a) First Contentful Paint (FCP):
+
+Definition: FCP measures the time it takes for the browser to render the first piece of content (text, image, etc.) on the screen.
+Significance: FCP is essential for user perception of page load speed. A fast FCP ensures that users see something meaningful on the page quickly, providing an impression that the page is loading.
+
+b) Largest Contentful Paint (LCP):
+
+Definition: LCP measures the time it takes for the browser to render the largest content element (image or text block) within the user's viewport.
+Significance: LCP is a crucial metric as it represents the point at which the main content of the page is likely visible to the user. A fast LCP contributes to a positive user experience, indicating that the critical content is available quickly.
+
+c) First Input Delay (FID):
+
+Definition: FID measures the time it takes for the browser to respond to the first user interaction, such as a click or tap, after the page has been rendered.
+Significance: FID is crucial for assessing the page's interactivity. A low FID means that users can interact with the page without delays, enhancing the overall user experience.

@@ -1,0 +1,4 @@
+List virtualization, exemplified by react-window, enhances rendering performance by displaying only the visible rows in a dynamic list. 
+It improves initial rendering speed and scroll performance, making it suitable for large datasets. react-window is introduced as a smaller 
+and faster alternative to react-virtualized, offering similar APIs. The guide provides examples of rendering both lists and grid layouts 
+using react-window. Limitations of react-window, including missing components and alternative web platform improvements

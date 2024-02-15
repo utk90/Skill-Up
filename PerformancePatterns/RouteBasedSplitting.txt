@@ -1,0 +1,23 @@
+The content discusses the concept of "Route-Based Splitting" in React applications. The idea is to request resources (components) that are specifically 
+needed for certain routes, optimizing the loading process. This is achieved by combining React features like Suspense and libraries such as react-router.
+
+Key Points:
+Route-Based Splitting: Components are dynamically loaded based on the current route, ensuring that only the necessary code for that route is requested.
+
+Implementation:
+1. The code uses React, lazy loading, and the react-router library.
+2. Components (App, Overview, Settings) are lazily loaded using import() and webpackChunkName for naming chunks.
+3. The <Suspense> component provides a fallback UI while components are being loaded.
+4. Code Example:
+The App, Overview, and Settings components are lazily loaded when their respective routes are accessed.
+The <Switch> component allows rendering the component associated with the matched route.
+Optimization: By loading components lazily per route, only the necessary bundle for the current route is requested. This optimizes the application's
+ performance by minimizing unnecessary resource loading.
+
+Crux:
+Route-Based Splitting involves dynamically loading React components based on the current route using features like lazy loading and react-router. 
+This optimization ensures that only the essential code for the active route is requested, contributing to a more efficient and responsive application.
+
+
+
+

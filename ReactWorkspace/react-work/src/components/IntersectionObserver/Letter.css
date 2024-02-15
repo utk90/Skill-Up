@@ -1,0 +1,13 @@
+.main-container {
+    display: flex;
+}
+
+.letter-container {
+    position: fixed;
+    left: 300px;
+    top: 50px;
+}
+
+.active {
+    background-color: blueviolet;
+}

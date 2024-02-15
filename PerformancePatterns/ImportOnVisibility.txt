@@ -1,0 +1,19 @@
+
+Summary:
+The content discusses the performance pattern of "Import On Visibility," focusing on scenarios where components, like lazy-loaded images, 
+are not immediately visible on the initial page load. It introduces the concept of using the IntersectionObserver API or libraries like react-lazyload 
+and react-loadable-visibility to import components dynamically when they come into the user's viewport. The article provides an example using 
+react-loadable-visibility to import the EmojiPicker component only when it becomes visible, reducing the initial loading time.
+
+Crux:
+1. Scenario: Components, such as lazy-loaded images or non-visible elements, don't need to be loaded instantly on the initial page load.
+2. Import On Visibility: Utilizing the IntersectionObserver API or libraries like react-lazyload and react-loadable-visibility allows components 
+to be imported dynamically when they become visible in the user's viewport.
+3. Example Implementation: The content demonstrates using react-loadable-visibility to dynamically import the EmojiPicker component only when it is
+about to become visible.
+4. User Experience: While the component is loading, a fallback component is displayed, informing the user that the application is still active, 
+and the component will be available shortly.
+5. Loading Optimization: Importing components on visibility helps reduce the initial loading time by deferring the import until the user is likely 
+to interact with or view the component.
+
+Note: The provided code snippet illustrates the implementation of dynamic imports based on visibility using the react-loadable-visibility library.

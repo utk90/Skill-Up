@@ -1,0 +1,39 @@
+Bundlers like Webpack or Rollup bundle source code into one or more bundles for web applications.
+JavaScript engines parse and compile requested data during loading.
+
+Objective:
+1. Optimize loading time and execution time for better performance.
+2. Minimize the time before content is painted on the user's screen.
+
+Challenges:
+1. Larger bundles result in increased loading, processing, and execution times.
+2. Users may experience frustration while waiting for the first content to appear.
+
+Solution: Bundle Splitting
+
+1. Split the application bundle into smaller bundles.
+2. Reduces loading, processing, and execution times.
+
+Benefits:
+1. Faster First Contentful Paint and Largest Contentful Paint.
+2. Improves Time To Interactive, making the UI responsive sooner.
+
+Considerations:
+1. The UI becomes interactive after the bundle is loaded and executed.
+2. Time To Interactive is crucial for a fully functioning application.
+
+Drawbacks of Larger Bundles:
+1.Loading unused code can hurt performance.
+2. Parsing and compiling unnecessary code impact low-end devices and slower networks.
+
+Optimizing Resource Loading:
+1. Fetch smaller bundles for initial rendering.
+2. Prioritize loading code with high-priority content.
+
+Example:
+Illustrates the process of bundle-splitting for better performance.
+Reduces initial loading time by fetching a smaller amount of data.
+
+Project Scope:
+Explore methods to bundle-split an application efficiently.
+Emphasizes loading resources in the most efficient and performant ways.

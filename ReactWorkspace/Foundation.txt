@@ -47,6 +47,14 @@ root.render(myElement);
 -> comparison is done by Diffing algorithm.
 -> React compares the VirtualDOM with RealDOM, finds out the changed nodes and updates only changed nodes in RealDOM leaving the rest nodes as it is. This process is called Reconciliation.
 
+Virtual DOM
+> createRoot() -> creates a DOM tree similar to what browser has
+-> React Fiber
+1. pause work and come back to it later
+2. assign priority to different typeso of work
+3. reuse previously completed work
+4. abort work if it's no longer needed
+
 7. React Fiber
 -> used to render a system faster, smoother and smarter.
 -> Fiber reconciler is the default reconciler for React 16 and above
@@ -103,3 +111,6 @@ Eg. items[A,B,C] if X is added at the beginning [X,A,B,C] then key of A would ch
 -> can be stateful and can manage side-effects
 -> enforces code reusability across the components
 
+14. Controlled vs Uncontrolled components
+-> Controlled Components: React manages the state of the form elements, and changes are controlled through React's event system.
+-> Uncontrolled Components: The state of the form elements is not managed by React; instead, it is handled directly by the DOM. React doesn't control the values, and refs are often used to access and manipulate the DOM directly.

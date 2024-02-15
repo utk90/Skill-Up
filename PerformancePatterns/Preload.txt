@@ -1,0 +1,50 @@
+1. What is Preload?
+<link rel="preload"> is a browser optimization to request critical resources earlier.
+It's useful for loading JavaScript bundles needed for interactivity.
+
+2. Preload in HTML:
+Example: <link rel="preload" href="emoji-picker.js" as="script">
+Helps to order loading of key resources.
+
+3. Use Cases:
+Optimize for Time To Interactive or First Input Delay.
+Care needed to avoid delaying resources crucial for First Contentful Paint or Largest Contentful Paint.
+
+4. Preload in Single-Page Apps:
+Used to preload resources needed instantly (e.g., fonts or images on initial render).
+Example: import(/* webpackPreload: true */ "./EmojiPicker");
+
+5. Webpack Support:
+Webpack 4.6.0+ supports preloading using comments (magic comment).
+Older versions may require the preload-webpack-plugin in the webpack config.
+
+6. Output and Results:
+Visible as a link tag with rel="preload" in the document head.
+Output shows preloaded assets and their sizes.
+
+7. Preload + Async Hack:
+For high-priority script download without blocking the parser.
+Example: <link rel="preload" href="emoji-picker.js" as="script"> + <script src="emoji-picker.js" async>
+
+8. Chrome 95+ Improvements:
+Fixes in Chrome 95+ make preload safer.
+Recommendations for proper usage based on priority and order.
+
+9. Caution and Best Practices:
+Use preload sparingly and measure impact.
+Incorrect usage can delay First Contentful Paint.
+Consider positioning based on resource priority.
+
+10. Additional Use Cases:
+Preload key scripts for interactivity.
+Preload Largest Contentful Paint image.
+Load fonts while preventing layout shifts.
+Conclusion:
+
+Preload is a powerful tool but should be used carefully, considering its impact on specific performance metrics. Measure its effects, 
+especially when dealing with resource prioritization and ordering in different scenarios.
+Note: The content emphasizes the cautious use of preload and provides insights into its application for optimal performance.
+
+
+
+

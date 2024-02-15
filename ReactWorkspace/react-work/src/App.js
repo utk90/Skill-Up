@@ -7,6 +7,7 @@ import UsersList from './components/HOC/UsersList';
 import TodosList from './components/HOC/TodosList';
 import Start from './components/LazyLoading/Start';
 import Page from './components/Modal/Page';
+import CountryList from './components/IntersectionObserver/CountryList';
 
 function App() {
   // const { data, error, loading } = useFetchAPI("https://jsonplaceholder.typicode.com/users");
@@ -35,7 +36,8 @@ function App() {
         {/* <Start /> */}
         {/* </header> */}
         {/* {FOR MODAL} */}
-        <Page />
+        {/* <Page /> */}
+        <CountryList />
       </header >
     </div>
   );
