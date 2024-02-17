@@ -1,0 +1,10 @@
+.main-container {
+    width: 100vw;
+    height: 100vh;
+}
+
+.circle-element {
+    border-radius: 50%;
+    border: 1px solid black;
+    background-color: blue;
+}
