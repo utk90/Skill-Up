@@ -1,0 +1,31 @@
+* {
+    margin: 0;
+    padding: 0;
+    user-select: none;
+}
+
+.ttt-grid {
+    height: 400px;
+    width: 400px;
+    background-color: burlywood;
+    opacity: 0.9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 5px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.ttt-box {
+    border: 5px solid black;
+    height: 120px;
+    width: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 100px;
+}

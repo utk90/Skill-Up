@@ -1,9 +1,11 @@
-import Circles from "./DetectOverlappingCircles/Circles";
+// import Circles from "./DetectOverlappingCircles/Circles";
+import TicTacToe from "./TicTacToe/TicTacToe";
 
 function App() {
   return (
     <div className="App">
-      <Circles />
+      {/* <Circles /> */}
+      <TicTacToe />
     </div>
   );
 }
