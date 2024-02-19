@@ -1,3 +1,5 @@
+// used to call a function directly by passing the context which points to the this object of that function
+
 const obj1 = {
     firstName: 'John',
     lastName: 'Doe',
