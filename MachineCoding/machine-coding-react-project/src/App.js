@@ -1,11 +1,13 @@
 // import Circles from "./DetectOverlappingCircles/Circles";
-import TicTacToe from "./TicTacToe/TicTacToe";
+// import TicTacToe from "./TicTacToe/TicTacToe";
+import SwitchCase from "./Switch-Case/SwitchCase";
 
 function App() {
   return (
     <div className="App">
       {/* <Circles /> */}
-      <TicTacToe />
+      {/* <TicTacToe /> */}
+      <SwitchCase />
     </div>
   );
 }
