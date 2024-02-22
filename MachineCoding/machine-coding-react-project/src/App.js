@@ -1,7 +1,8 @@
 // import Circles from "./DetectOverlappingCircles/Circles";
 // import TicTacToe from "./TicTacToe/TicTacToe";
 // import SwitchCase from "./Switch-Case/SwitchCase";
-import FeatureFlag from "./FeatureFlag/FeatureFlag";
+// import FeatureFlag from "./FeatureFlag/FeatureFlag";
+import Stepper from "./MultiStepper/Stepper";
 
 function App() {
   return (
@@ -9,7 +10,8 @@ function App() {
       {/* <Circles /> */}
       {/* <TicTacToe /> */}
       {/* <SwitchCase /> */}
-      <FeatureFlag />
+      {/* <FeatureFlag /> */}
+      <Stepper />
     </div>
   );
 }
