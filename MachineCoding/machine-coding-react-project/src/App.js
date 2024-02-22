@@ -1,13 +1,15 @@
 // import Circles from "./DetectOverlappingCircles/Circles";
 // import TicTacToe from "./TicTacToe/TicTacToe";
-import SwitchCase from "./Switch-Case/SwitchCase";
+// import SwitchCase from "./Switch-Case/SwitchCase";
+import FeatureFlag from "./FeatureFlag/FeatureFlag";
 
 function App() {
   return (
     <div className="App">
       {/* <Circles /> */}
       {/* <TicTacToe /> */}
-      <SwitchCase />
+      {/* <SwitchCase /> */}
+      <FeatureFlag />
     </div>
   );
 }
