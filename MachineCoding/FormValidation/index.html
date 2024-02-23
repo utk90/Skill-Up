@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form id="userForm">
+        <label for="ip1">Username: </label>
+        <input id="ip1" type="text" />
+        <label for="ip2">Password: </label>
+        <input id="ip2" type="password" placeholder="enter 5 digits" />
+        <input type="submit" value="Login" />
+        <div id="error-field"></div>
+    </form>
+    <script>
+        document.getElementById('userForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const input1 = document.querySelector('#ip1');
+            const input2 = document.querySelector('#ip2');
+            const errorField = document.querySelector('#error-field');
+
+            const resetForm = () => {
+                input1.value = '';
+                input2.value = '';
+            }
+            
+            if (input1.value==='' || input2.value===''){
+                errorField.textContent = 'All fields required';
+            } else if (input2.value.length!==5){
+                errorField.textContent = 'Password should be of 5 digits';
+            } else{
+                resetForm();
+                errorField.textContent = 'Form submitted successfully'
+            }
+        })
+
+    </script>
+</body>
+
+</html>
