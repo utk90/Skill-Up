@@ -2,7 +2,8 @@
 // import TicTacToe from "./TicTacToe/TicTacToe";
 // import SwitchCase from "./Switch-Case/SwitchCase";
 // import FeatureFlag from "./FeatureFlag/FeatureFlag";
-import Stepper from "./MultiStepper/Stepper";
+// import Stepper from "./MultiStepper/Stepper";
+import InfiniteScroll from "./InfiniteScroll/InfiniteScroll";
 
 function App() {
   return (
@@ -11,7 +12,8 @@ function App() {
       {/* <TicTacToe /> */}
       {/* <SwitchCase /> */}
       {/* <FeatureFlag /> */}
-      <Stepper />
+      {/* <Stepper /> */}
+      <InfiniteScroll />
     </div>
   );
 }
