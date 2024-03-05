@@ -1,0 +1,107 @@
+Monolithic
+cons
+1. regression due to coupling
+2. difficult to debug
+3. slower development
+4. lacks flexibility
+Eg. Ruby on Rails, Django, PHP
+----------------
+Modular Monolith
+pros
+1. More modular
+2. Improved scalability
+
+cons
+1. Single unit deployment
+Eg. Shopify (Improvised Ruby on Rails)
+----------------
+Integrated applications (Monorepos)
+pros
+1. Monorepos
+2. Modular applications
+3. Build time composition
+4. URL and sub domain composition
+5. decoupled and managed complexity
+
+cons
+1. single unit deployment
+2. fragmented UI may create bad UX
+Eg. Multiple monolithic applications composed at build time, multiple applications inside a monorepo deployed to a single url or subdomain (NextJs zones)
+----------------
+Microfrontend applications
+Breaking down monolithic application into smaller pieces so as to improve scalability and mantainability of the application.
+
+1. fully distributed architecture
+2. multiple units of deployment
+3. team autonomy
+
+Types of microfrontend
+1. build time composition (similar to npm packages)
+2. run-time composition
+
+Buildtime composition
+1. build and package your app, but you don't know when it is going to be composed and served to the user
+2. application shell that composes other Micro-frontend needs to be deployed
+3. Versioning
+
+Runtime composition
+1. build is separate from deployment
+2. fully independent deployments
+3. new versions are enabled to users at runtime with no builds needed
+
+Tools for runtime composition
+1. single spa
+2. module federation	
+------------------
+Code organisation
+Multi repository micro-frontend
+pros
+1. fully independent code base
+2. single responsibility principle
+
+cons
+1. hard to track
+2. hard to enforce and keep governance
+
+Micro-frontend with monorepos
+pros
+1. independence with cohesion
+2. easier to track, manage and enforce governance
+
+cons
+1. complex to setup
+2. could introduce accidental coupling
+-------------------
+Distributed monolith
+1. deployment takes 5 hrs+
+2. 70 modules
+3. rollback halfway through if something breaks
+4. rollback also takes 5 hrs+
+
+Risks of distributed architecture
+1. complexity
+2. all organisations are different, expect different implementations
+3. pushback: decision makers need to be onboard
+4. consistency paradox
+5. incorrect splitting
+6. too many micro-frontends
+
+Benefits of distributed monolith
+1. team autonomy
+2. time to market
+3. scaling
+4. organisational benefits
+5. difference with microservices is that the benefits are mostly organisation
+
+Know benefits
+1. continuous development
+2. instant rollbacks
+3. A/B testing
+4. chaos engineering and self healing
+
+----------------------------------------
+1. Application 1 running on 1001 port
+2. Container running on 1000 port
+3. Mapping application 1 to 1000 port using Module federation
+Module federation - process of loading separately compiled applications at runtime
+In this, localhost 1000 will make request to localhost 1001 and similarly we can make multiple requests from localhost 1000 to localhost 1002
