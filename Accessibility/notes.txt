@@ -1,0 +1,44 @@
+1. Using Semantic HTML
+> use semantic HTML elements (<nav>, <header>, <footer>, <main>) to provide meaningful structure to content
+> use proper heading levels (h1 to h6) to create a hierarchial structure of content
+
+2. Focus management
+> ensure the focus is managed appropriately as users navigate through the application
+> use tabIndex attribute to control the order in which elements receive focus
+
+3. Keyboard navigation
+> test and ensure all interactive elements can be accessed and activated using a keyboard
+> implement keyboard shortcuts for frequently used actions
+
+4. accessible forms
+> use proper form labels (<label>) and associate them with form elements using the 'for' attribute or by nesting the input inside the label
+> provide meaningful error messages and instructions for form validation
+> ensure that form controls are navigable and operable with a keyboard
+
+5. ARIA (Accessible Rich Internet Applications)
+> use ARIA attributes to enhance the accessibility of dynamic and interactive element
+> eg: use 'aria-labelledby' and'aria-describedby' to associate descriptive text with elements
+
+6. contrast and color
+> ensure sufficient color contrast for text and interactive elements to make content readable for users with visual impairments
+> avoid conveying information solely through color; use labels, icons or patterns as alternatives
+
+7. images and multimedia
+> provide descriptive text using 'alt' attribute for images to convey their meaning
+> include transcripts or captions for audio and video content
+> implement accessible media players with keyboard controls
+
+8. screen reader compatibility
+> test application using screen readibility to ensure compatibility
+> use proper ARIA roles and properties to enhance the reading experience for screen reader users
+
+9. dynamic content
+> ensure that dynamic content updates are announced to screen readers
+> use ARIA live regions for live updates and notifications
+
+10. Testing and QA
+> perform accessiblity testing using tools like Axe, Lighthouse or WAVE
+> conduct manual testing with assitive technologies such as screen readers
+
+11. Responsive design
+> implement responsive design principles to ensure application works well on various devices and screen sizes
