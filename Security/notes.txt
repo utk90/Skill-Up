@@ -1,0 +1,62 @@
+1. Secure Data transmission
+> use HTTPS to encrypt data transmitted between client and server
+> avoid using HTTP, especially for sensitive information
+
+2. Cross-Site Scripting (XSS) Protection
+> sanitize and validate user input to prevent XSS attacks
+> use libraries like DOMPurify to sanitize HTML content
+> be cautious with dangerously set inner HTML and use it only when necessary
+
+3. Cross-Site Request Forgery(CSRF) Protection
+> implement anti-CSRF tokens to protect against CSRF attacks
+> include and validate CSRF tokens in forms and AJAX requests
+
+4. Content Security Policy (CSP)
+> implement a content security policy to control which resources can be loaded by the application
+> define and enforce policies to mitigate XSS and other code injection attacks
+
+5. Authentication and Authorization
+> use secure authentication mechanisms like JWL (JSON web tokens)
+> implement strong password hashing algorithms for user authentication
+> implement proper authorization checks to ensure users can only access resources they are allowed to
+
+6. Session management
+> implement secure session management practices
+> use secure, random session identifiers
+> set session timeouts and implement proper logout functionality
+
+7. Input validation
+> validate and santize all user inputs on the client and server sides
+> avoid relying solely on client-side validation, perform server-side validation as well
+
+8. Security headers
+> set appropriate security headers, such as Strict-Transport-Security (HSTS) and X-Content-Type-Options
+> enable features like HTTP Public Key Pinning(HPKP) if necessary
+
+9. Dependency scanning
+> regularly scan and update dependencies, including npm packages used in your React application
+> use tools like npm audit to identify and address security vulnerablilities
+
+10. Error handling
+> implement proper error handling to avoid exposing sensitive information in error messages
+> log errors securely for debugging purposes with revealing sensitive details
+
+11. Clickjacking protection
+> implement X-Frame-Options header to prevent your site from being embedded in iframes
+> use the 'frame-ancestors' directive to control framing options
+
+12. Secure file uploads
+> if application allows file uploads, validate file types and implement restrictions
+> store uploaded files in a secure location with limited access
+
+13. Security audits and testing
+> conduct regular security audits and testing using tools like OWASP ZAP, Burp suite or other security scanners
+> perform penetration testing to identify and address vulnerablilities
+
+14. Education and training
+> educate development team on security best practices
+> keep the team informed about the latest security threats and vulnerablilities
+
+15. Monitoring and Logging
+> implement monitoring and logging for security-related events
+> set up alerts for suspicious activities and potential security incidents
