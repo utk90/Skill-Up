@@ -8,6 +8,8 @@ import TodosList from './components/HOC/TodosList';
 import Start from './components/LazyLoading/Start';
 import Page from './components/Modal/Page';
 import CountryList from './components/IntersectionObserver/CountryList';
+import WindowResizer from './components/AllHooks/WindowResizer';
+import CounterRender from './components/AllHooks/useCounter';
 
 function App() {
   // const { data, error, loading } = useFetchAPI("https://jsonplaceholder.typicode.com/users");
@@ -33,11 +35,13 @@ function App() {
         {/* <HookUseImperativeHandle /> */}
         {/* <UsersList />
         <TodosList /> */}
+        {/* <WindowResizer /> */}
         {/* <Start /> */}
         {/* </header> */}
         {/* {FOR MODAL} */}
         {/* <Page /> */}
-        <CountryList />
+        {/* <CountryList /> */}
+        <CounterRender />
       </header >
     </div>
   );
