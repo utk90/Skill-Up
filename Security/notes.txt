@@ -60,3 +60,15 @@
 15. Monitoring and Logging
 > implement monitoring and logging for security-related events
 > set up alerts for suspicious activities and potential security incidents
+
+WAYS to SECURE from potential Vulnerablilities
+> Use HTTPS
+> Secure cookies (set 'Secure' attribute on cookies)
+> HttpOnly cookies (to prevent client-side scripts from accessing them)
+> Token-based authentication
+> Session Id encryption
+> Dynamic session ids
+> Token expiry and rotation
+> IP address and user-agent verification
+> Rate limiting
+> Regular security audits
