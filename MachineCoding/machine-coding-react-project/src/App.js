@@ -3,7 +3,9 @@
 // import SwitchCase from "./Switch-Case/SwitchCase";
 // import FeatureFlag from "./FeatureFlag/FeatureFlag";
 // import Stepper from "./MultiStepper/Stepper";
-import InfiniteScroll from "./InfiniteScroll/InfiniteScroll";
+// import InfiniteScroll from "./InfiniteScroll/InfiniteScroll";
+// import Stopwatch from "./Stopwatch/Stopwatch";
+import Modal from "./Modal/Modal";
 
 function App() {
   return (
@@ -13,7 +15,9 @@ function App() {
       {/* <SwitchCase /> */}
       {/* <FeatureFlag /> */}
       {/* <Stepper /> */}
-      <InfiniteScroll />
+      {/* <InfiniteScroll /> */}
+      {/* <Stopwatch /> */}
+      <Modal />
     </div>
   );
 }
