@@ -5,7 +5,9 @@
 // import Stepper from "./MultiStepper/Stepper";
 // import InfiniteScroll from "./InfiniteScroll/InfiniteScroll";
 // import Stopwatch from "./Stopwatch/Stopwatch";
-import Modal from "./Modal/Modal";
+// import Modal from "./Modal/Modal";
+
+import Accordian from "./Accordian/Accordian";
 
 function App() {
   return (
@@ -17,7 +19,8 @@ function App() {
       {/* <Stepper /> */}
       {/* <InfiniteScroll /> */}
       {/* <Stopwatch /> */}
-      <Modal />
+      {/* <Modal /> */}
+      <Accordian />
     </div>
   );
 }
