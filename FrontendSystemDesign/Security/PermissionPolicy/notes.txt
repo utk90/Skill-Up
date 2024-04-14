@@ -1,0 +1,6 @@
+Permission policies
+- Refers to controlling browser feature access to webpage or iframe 
+
+Feature allowed for the navigated iframe origin
+- To allow feature access to the origin that the iframe navigates to, list the origin in the iframe "allow" attribute
+- When using the syntax, the allowlist should include the 'src' token because the syntatic sugar where allow='geolocation' is a shorthand for allow="geolocation 'src'"

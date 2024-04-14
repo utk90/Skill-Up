@@ -1,0 +1,67 @@
+Compliance and Regulations
+
+1. Data Protection (GDPR(General Data Protection Regulation))
+- Protects the privacy and personal data of EU citizens
+a. implement data encryption in transit and at rest using strong algorithms
+b. establish data access controls based on the principle of least privilege
+c. implement secure data deletion procedures
+d. ensure you obtain explicit consent before collecting and processing personal data
+
+2. Healthcare (HIPAA(Health Insurance Portability and Accountability Act))
+- Protects health information and ensures the confidentiality and integrity of patient data
+a. Encrypt patient health information both in transit and at rest
+b. implement multi-factor authentication for accessing patient records
+c. regularly update and patch healthcare systems to address vulnerabilites
+d. implement audit logging to track access to patient data
+e. implement data retention policies to delete patient records when they are no longer needed
+
+3. Financial services (PCI DSS(Payment Card Industry Data Security Standard))
+- Ensures the secure processing, transmission and storage of credit card information
+a. use tokenization for sensitive data to reduce the impact of a potential breach
+b. regularly perform Vulnerability scans and penetration testing on payment systems
+c. monitor and log all access to cardholder data
+d. implement secure coding practices for payment applications
+
+4. Government (FISMA(Federal information security management act))
+- Establishes information security standards and guidelines for federal agencies
+a. implement continuous monitoring of security controls and incidents
+b. regularly update and patch systems to address vulnerabilites
+c. develop and maintain comprehensive security documentation, including security plans and risk
+
+5. Cloud services (ISO/IEC 27001)
+- An international standard for information security management systems (ISMS)
+a. regularly review and update security policies based on the risk management
+b. implement access controls and logging for cloud service configuration
+c. conduct regular third-party security assessments for cloud providers
+
+6. Accessibility (WCAG(Web content accessibility guidelines))
+- Ensures web content is accessible to people with disabilities
+a. conduct accessibility audits and testing, involving users with disabilities
+b. provide accessible alternatives for multimedia content
+c. ensure keyboard navigation and screen reader compatibility
+
+7. Privacy (CCPA (California Consumer Privacy Act))
+- Grants California residents rights concerning
+a. implement a mechanism for users to opt out of the sale of their personal information
+b. establish a process for responding to data access and deletion requests within the specified timeframe
+c. update privacy policies in plain language
+
+8. Cybersecurity (NIST Cybersecurity Framework)
+- Provides a framework for improving cybersecurity posture, applicable across various industries
+a. conduct regular security risk assessments based on the NIST framework
+b. establish an incident response plan and conduct regular drills
+c. implment security awareness training for employees
+d. use network segmentation isolate critical assets
+
+9. Web Application Security (OWASP Top Ten)
+- Highlights the most critical web application security risks 
+a. Injection attacks (eg. SQL Injection)
+b. Cross-Site Scripting (XSS)
+c. Authentication and Session management
+d. Insecure Deserialization
+e. Security Misconfiguration
+f. Sensitive Data Exposure
+g. XML External Entity (XXE)
+h. Broken Access Control
+i. Security Headers Not Set
+j. Cross-Site Request Forgery

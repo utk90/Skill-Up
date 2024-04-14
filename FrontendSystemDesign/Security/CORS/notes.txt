@@ -1,0 +1,28 @@
+Cross Origin Resource Sharing
+> by default browser uses SOP (same origin policy)
+
+1. Origin
+http://example.com:8080/foo - web URI (uniquely identifies a resource on web)
+http - protocol
+example.com - domain
+8080 - port
+foo - path
+
+2. Same origin policy
+
+3. CORS Headers
+- Headers set by server to allow cross domain interaction
+
+4. Access-Control-Allow-Origin
+- Response header set by server to indicate which site can access its data
+
+5. Access-Control-Allow-Credentials
+- If the request is initiated with cookies in it, then server need to make sure it allows credentials in request from origin
+
+6. Preflight request
+- Request initiated by browser before making actual cross origin request
+- Response of this request will tell browser about CORS header that a server may respond with
+- Other CORS headers
+> Access-Control-Allow-Methods - which method server allow
+> Access-Control-Allow-Headers - which headers server allow
+> Access-Control-Max-Age - for how long response from preflight can be reused

@@ -1,0 +1,16 @@
+Dependency Security
+
+1. Regular audit of dependencies
+> npm audit, npm update
+
+2. Enforcing auditing
+> npm set audit true
+
+3. Code & dependency monitor
+> codeql
+
+4. Dependency locking
+> package-lock.json
+
+5. Security penetration testing using tools
+> burp-suite

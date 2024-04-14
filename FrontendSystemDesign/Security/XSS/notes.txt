@@ -1,0 +1,17 @@
+XSS (Cross site scripting)
+
+Vulnerability
+- user session hijacking
+- unauthorized activities
+- capturing keystrokes
+- stealing critical information
+- phishing attack
+
+Mitigation
+- list all possible way to take user input
+- replace: innerHTML > innerText | textContent
+- escaping
+- using library like React
+- sanitize: DOMPurify
+- CSP headers
+- avoid using eval

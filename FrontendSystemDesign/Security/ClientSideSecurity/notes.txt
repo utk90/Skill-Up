@@ -1,0 +1,23 @@
+Storing sensitive data on client storage
+a. try storing at server
+b. encrypt data
+c. token exipry
+
+Authentication
+a. JWT/OAuth
+b. session token exipry
+c. MFA
+
+Data Integrity
+a. checksum -> to ensure data is not corrupted in between
+
+Storage Limit
+- Since the storage space is less, data loss can happen
+- localStorage (5-10MB)
+- sessionStorage (5-10MB)
+- cookie (4-20KB)
+- indexedDB (50-100MB)
+- cache (~100MB)
+
+Session management
+- avoid accessing set of cookies client side (httpOnly, secure)

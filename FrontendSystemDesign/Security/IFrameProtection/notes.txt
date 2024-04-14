@@ -1,0 +1,12 @@
+IFrame protection
+
+Vulnerability
+- Clickhijacking
+- data theft via javascript
+- session and cookie theft
+
+Mitigation
+- X-Frame-Options: DENY
+- CSP: frame-ancestors 'self'
+- sandbox iframe
+- Cookie (httpOnly: true, secure: true, samSite: 'strict')

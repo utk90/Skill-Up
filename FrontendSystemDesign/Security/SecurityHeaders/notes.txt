@@ -1,0 +1,14 @@
+X-Powered-By: 
+don't want to leak information about the server (server tech like Express, Tomcat Apache)
+
+Referrer-Policy: 
+don't want to leak extra information incase of any webpage redirection
+
+X-Content-Type-Options:
+not allowing browser to decide content type based on content
+
+X-XSS-Protection:
+by the browser itself to leverage the first level security from XSS
+
+HSTS (Strict transport Security Header):
+ensuring application only exists on HTTPS not on HTTP

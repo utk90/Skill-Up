@@ -1,0 +1,17 @@
+Input validation and santization
+
+1. Use framework library
+2. Whitelist validation
+3. Regular expression
+4. Escape user input
+5. Parameterized URLs
+6. Validate data types
+7. Length and size check
+8. Image and files
+9. Add client side validation
+10. Error handling
+11. Security headers
+12. Regular updates and patch
+13. Security audits and testing 
+14. Education and training
+15. Avoid using third-party libraries

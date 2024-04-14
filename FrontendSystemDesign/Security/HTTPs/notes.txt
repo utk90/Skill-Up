@@ -1,0 +1,25 @@
+Secure communication (HTTPs)
+> Data encryption
+- data not readable during client to server transfer (Transport layer security)
+
+> Authentication
+- Server provides SSL(secure sockets layer) or TLS(transport layer security) certificate to client which it uses for ensuring secured connection
+- if the certificate is expired then the browser will show warning to rectify the certificate
+
+> Data Integrity (Message Authentication Code (MAC))
+- cryptographic and checksum validation to avoid in-between data manipulation
+
+> Protection against phishing
+
+> Data privacy
+
+> Compliance with security standards
+
+> Trust and reputation
+
+> Search engine ranking
+
+> Protection against browser warnings
+
+> Faster website loading
+- HTTPs gives access to HTTP2 which make website load fast

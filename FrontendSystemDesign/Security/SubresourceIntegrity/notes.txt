@@ -1,0 +1,6 @@
+Subresource Integrity
+- Refers to ensuring proper linking and usage of 3rd party libraries
+- eg. using bootstrap using cdn, inside the link tag "integrity" property is present
+- integrity property is SHA(384,256) encoded of app+algo+crypto which is unique for a particular cdn link
+- it ensures the script resource being used is valid and from trusted source
+- SRI used to get SHA for URL resource
