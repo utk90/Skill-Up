@@ -1,0 +1,41 @@
+Client Request -> Browser -> Router -> ISP -> Server (serves with html, css, js)
+
+> Browser can handle 6-8 requests parallely and queues remaining requests
+
+1. Browser (Cache, Service worker)
+
+2. Operating System (host file is modified)
+
+3. Router
+
+4. ISP
+> Peering is done by ISP's reduce hopping (avoid regional or local ISP hops)
+
+5. Communication between client and server (Handshaking)
+
+> Client sends Synchronization request to server
+> Server responds with SYN + ACK
+> Sends ACK
+
+> Client -> DNS lookup
+> TCP handshake
+> SSL handshake (for HTTPS request) (exchange of certificate happens and encryption)
+> HTTP GET requesst client to server
+> Server sends response
+> Client responds with ACK
+> Server sends small packet size resource first (for quick initial rendering)
+
+WHOIS (used to check the information about the website)
+
+6. Loading -> Scripting -> Rendering -> Painting
+
+HTML parsing, CSS parsing, JS parsing
+
+CSS -> render blocker
+JS -> parser blocker
+
+HTML -> DOM tree -> CSSOM -> render tree (DOM + CSSOM) + Layouting -> Composting
+
+7. JS execution
+
+Load script -> Parse -> AST internalization -> Compile -> Bytecode finalization -> Execute

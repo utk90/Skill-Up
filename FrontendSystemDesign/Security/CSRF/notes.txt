@@ -1,0 +1,50 @@
+Vulnerabilites
+
+Reasons
+- Statelessness of HTTP
+- User authentication
+- Get API call to update data or perform action
+http://bank.com/fundtransfer?accId=21323&amount=100000
+
+<a href="" />Offer</a>
+<img src="" />
+<form action="" method="POST">
+    <input type="hidden" name="accId" value="21323" />
+    <input type="hidden" name="amount" value="100000" />
+    <input type="submit" value="Click for IPhone" />
+</form>
+> Visibility: GET requests append data to the URL, which makes the data visible in 
+browser history, server logs, and potentially in the Referer header when navigating between pages. 
+This increases the likelihood of sensitive data being exposed.
+> Caching: GET requests are often cached by browsers and intermediary servers. 
+Cached requests can be re-executed without the user's knowledge, which could lead to unintended 
+modifications of data when a CSRF attack is initiated.
+> Ease of Exploitation: CSRF attacks typically rely on tricking a user's browser into making 
+unauthorized requests to a target website on behalf of the authenticated user. Since GET requests 
+can be initiated simply by loading an image or clicking on a link, they are more susceptible to being 
+xploited in CSRF attacks compared to other HTTP methods like POST, PUT, or DELETE, which require forms 
+or AJAX requests.
+> Safe Methods Principle: According to the HTTP specification, GET requests are considered "safe" 
+operations, meaning they should not have any side effects on the server's state. Performing CRUD 
+operations using GET violates this principle, as it implies that the operation could modify server 
+state, opening up the potential for CSRF attacks to cause unintended changes.
+
+Mitigation
+- Anti-CSRF token
+
+Websit --------------formSubmit{csrf-token}-------------------> Server
+
+- SameSite Cookies
+
+app.use((req,res,next)=>{
+    res.setHeaer('Set-Cookie', 'SameSite=Strict; Secure');      (SateSite -> Strict, Lax, None)
+    next();
+})
+
+- Referer-based validate
+
+- Use captcha
+
+- CSP header 
+
+- Don't use GET method for update operation

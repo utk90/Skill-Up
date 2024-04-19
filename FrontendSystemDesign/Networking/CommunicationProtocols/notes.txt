@@ -1,0 +1,47 @@
+HTTP (Hypertext Transfer Protocol)
+a. TCP connection
+b. HTTP request
+c. HTTP response
+d. Used in web browsing
+
+HTTP/3 (QUIC)
+a. UDP connection
+b. Header compression
+c. Faster
+d. Improved performance
+e. Better network congestion
+f. Used in IoT virtual reality, Youtube
+
+HTTPS
+a. TCP connection
+b. SSL connection (Public key shared by server to client)
+c. Client shares session key
+d. Data encrypted
+e. Used in web browsing
+
+Websocket
+a. HTTP connection
+b. HTTP Upgrade (101)
+c. Full duplex
+d. Used in Live chat, Real-time data transmission
+
+TCP (Transmission Control Protocol)
+a. Client sends SYN request
+b. Server responds with SYN + ACK request
+c. Client responds with ACK request
+d. Server sends the data
+e. For each resource sharing session, TCP is established to avoid data packet loss
+f. Used in web browsing, email protocols
+
+UDP (User Datagram Protocol)
+a. Less handshaking process
+b. Faster
+c. Does not guarantee packet delivery
+
+SMTP (Simple Mail Transfer Protocol)
+a. SMTP protocol uses SMTP server
+b. Used in sending EMAILs
+
+FTP (File Transfer Protocol)
+a. Uses Control channel and Data channel
+b. Used in file upload/download
