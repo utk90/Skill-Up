@@ -1,0 +1,140 @@
+REST API
+-> What is REST API?
+-> Why REST? Benefits?
+-> Building Blocks
+    -> URL
+    -> Methods
+    -> Headers
+    -> Request
+    -> Response
+    -> Status Code
+-> Build App
+-> Postman
+-> HTTP 1/2/3
+-> Best practices
+-> Advance
+
+Benefits of REST
+-> Easy of use
+-> Stateless
+-> Scalability
+-> Flexibility with Data
+-> Uniform interface
+-> Caching
+-> Separation of concerns
+-> Interoperability - Language agnostic
+-> Ease of testing
+-> Security
+
+--------------------Request Headers-------------------
+. Header
+-> Usecase
+-> Example
+
+1. Host
+-> Target Host
+-> host: www.1.cd.example.com
+
+2. Origin
+-> Origin host
+-> host: www.example.com
+
+3. Referer
+-> Indicate the previous web page making this request (used to track the users coming from x website -> y)
+-> https://example.com/previous-page
+
+4. User Agent
+-> Identify the client user agent string - OS, Browser versions
+-> Mozilla/5.0 (Macintos: Intel X Y Z) Safari/431.43
+
+5. Accept
+-> Response content type
+-> application/json
+
+6. Accept-language
+-> Preferred response content language
+-> en-US, en;q=0.9
+
+7. Accept-encoding
+-> Encoding algorithm
+-> gzip, deflate, br(Brotli (more secure))
+
+8. Connection
+-> Keeps TCP connection open
+-> keep-alive, close
+
+9. Authorization
+-> Send credentials
+-> Authorization: Bearer-Token
+
+10. Cookie
+-> Previous Server Token can be resend
+-> key=value
+
+11. If-modified-since
+
+12. Cache-control
+
+--------------------Response Headers-------------------
+. Header
+-> Usecase
+-> Example
+
+1. Date
+-> When the response was generated
+-> Thu, 30 Nov 2014 03:23:04 GMT
+
+2. Server
+-> Provides server info (need to removed from response header to avoid security breach of server loop holes)
+-> Server: Apache/2.4.41 (Unix)
+
+3. Content-type
+-> Type of response content
+-> text/html, application/json
+
+4. Content-length
+-> Original body response length (browser keeps track of dowmloading status)
+-> 256 KB
+
+5. Set-cookie
+-> Informs about cookie need to store for future response
+-> Set-cookie: user_id=123 (hashed key)
+
+6. Content-encoding
+-> Response content encoding
+-> br
+
+7. Cache-control
+
+8. Last-modified
+
+9. Etag
+
+10. Expires
+
+--------------------------------------------------------
+--------------------STATUS CODES-------------------
+. Status Range
+-> Use case
+-> Status Code
+-> xxx: Use case
+
+1. 1XX
+-> Information
+-> 100: Continue, 101: Switching (Upgrade header field request and indicates which protocol it is switching to.) (RestAPI to Websocket upgrade)
+
+2. 2XX
+-> Success
+-> 200: OK, 201: Created, 202: Accepted, 204: No Content, 206: Partial Content
+
+3. 3XX
+-> Redirection
+-> 301: Moved peramanently, 302: Temporary moving, 307: 302=retain method, 308: 301=retain method
+
+4. 4XX
+-> Client error
+-> 400: Bad request, 401: Unauthorized, 403: Authorization, 404: Not Found, 405: Method not allowed (POST on browser), 429: Concurrent request
+
+5. 5XX
+-> Server error
+-> 500: Internal server error, 502: Bad gateway, 503: Service unavailable, 504: Gateway timeout, 507: Insuffient storage
