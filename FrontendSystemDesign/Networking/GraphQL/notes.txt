@@ -1,0 +1,116 @@
+- What is GraphQL?
+- Why GraphQL? Benifits?
+- Rest vs GraphQL
+- Building block
+- Build GraphQL app
+- Calling GraphQL from client
+- Tool
+- Advance
+
+GraphQL Benefits
+-> avoid over-fetching
+-> avoid under-fetching
+-> better mobile performance
+-> efficiency & precision
+-> declaratve data fetching
+-> structured/hierarchial structure
+-> strongly typed GraphQL dashboard
+-> introspection & suggestion capability of GraphQL dashboard
+-> real time capabilities > subscription
+
+---------------------------------------------------------------
+Rest vs GraphQL
+. Aspect
+-> REST
+-> GraphQL
+
+1. Data fetching
+-> Multiple endpoints
+-> Single endpoint
+
+2. Request structure
+-> Fixed structure + HTTP methods
+-> Flexible (Query/Mutation)
+
+3. Over-fetching/Under-fetching
+-> Issues
+-> Resolved
+
+4. Response size
+-> Fixed size
+-> Flexible size
+
+5. Versioning
+-> Explicit versioning
+-> Flexible nature (same endpoint can be used with deprecated capability)
+
+6. Schema definition
+-> Not well defined
+-> Explicit schema definition
+
+7. Real-time capabilities
+-> Polling, web socket
+-> Out of scope support (Subscription)
+
+8. Tooling support
+-> Postman
+-> GraphQL playground
+
+9. Caching
+-> Relies on HTTP cache
+-> Fine grained
+
+10. Client control
+-> No client can't decide response
+-> Client can decide the response
+
+11. Adoption and community
+-> Widely adopted and extensive community support
+-> Rapid growing and community support evolving
+
+---------------------------------------------------------------
+GraphQL
+ - Creator (Server)
+    - GraphQL server libraries
+ - Consumer (Client)
+    - fetch
+    - GraphQL client libraries
+
+
+GraphQL Building Block
+- Schema/Types
+    type Country{
+        code: string,
+        currency: string,
+        phone: string,
+        name: string,
+        ID: ID
+    }
+    SDL (GraphQL Schema Definition Language)
+
+    Types
+        - Scalar
+            > ID
+            > String
+            > Int
+        - Custom Types
+            > Country
+            > Continent
+- Query/Mutation
+    - HTTP: POST
+    - Query -> Get Data
+        type Query{
+            countries: [Country]
+        }
+    - Mutation -> Update Data
+        type Mutation{
+            language(id: ID): Language
+        }
+- Resolver
+    - A resolver is a function that's responsible for populating the data for a single field in your schema. It can populate that data in any way you define, 
+    such as by fetching data from a back-end database or a third-party API.
+    Query: {
+        countries: (parent, args, context, info){
+            return //;
+        }
+    }
