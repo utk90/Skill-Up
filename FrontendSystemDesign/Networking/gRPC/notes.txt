@@ -1,0 +1,111 @@
+Remote Procedure Call (RPC)
+gRPC
+- gRPC
+- RPC
+- ProtoBuf
+- HandsOn
+- Rest vs gRPC
+- Pros/Cons
+
+RPC
+- single channel two-way communication
+- long lasting
+- though it is single channel and two-way communication but it is different from websockets
+- fast as it uses HTTP2 protocol
+
+ProtoBuf
+- .proto file (human readable) and automated generation of code with language compatibility (Java, Python, Go)
+- Serialized data (can be interpreted by any language) (encode/decode format)
+> ProtoBuf (Google)
+> IDL (Interface definition language)
+> Serialization/Deserialization
+> Binary support
+> .proto (proto3)
+
+Benefit
+> less CPU resources
+> mobiles
+> faster
+
+------------------------------------------
+High-level architecture for HandsOn
+*Client gRPC used is Express server*
+*for JS compatibility of .proto file @grpc/grpc-js dependency is used*
+*for loading .proto file (on client side and server side) @grpc/proto-loader dependency is used*
+
+1.1 Browser to Client gRPC (REST call)
+1.2 Client gRPC to Browser (REST call)
+
+2.1 Client gRPC to Server gRPC (protoBuf)
+2.2 Server gRPC to Client gRPC (gRPC)
+
+------------------------------------------
+Rest Vs gRPC
+
+comparision format
+. feature aspect
+> REST
+> gRPC
+
+1. Communication Protocol
+> typically uses HTTP/HTTPS
+> uses HTTP/2 (HTTP2 has header compression) as the default transport protocol
+
+2. Message format
+> primarily uses JSON or XML for payloads
+> uses Protocol Buffer (protobuf) for payloads
+
+3. IDL (Interface definition language)
+> no standard often uses OpenAPI (Swagger) or WSDL (Web services definition language)
+> uses Protocol Buffers (protobuf) as a standard IDL
+
+4. Data Serialization
+> JSON, XML or other text-based formats
+> Binary serialization with ProtoBuf
+
+5. Efficiency
+> generally less efficient due to text-based formats and multiple round trips
+> more efficient, thanks to binary serialization and multiplexing in HTTP/2
+
+6. Flexibility
+> more flexible in terms of data formats and can support various data models
+> strongly typed, enforcing a clear contract between client and server
+
+7. RPC styles
+> primarily supports synchronous request-response (HTTP methods like GET, POST)
+> supports synchronous and asynchronous RPCs, including bidirectional streaming
+
+8. Streaming
+> supports server-sent events or WebSocket for streaming, but not as native support
+> native support for bidirectional streaming, server streaming and client streaming
+
+9. Service Discovery
+> often requires external tools for service discovery (eg. Kubernets service discovery)
+> built-in support for service discovery with naming and load balancing
+
+10. Security
+> typically relies on HTTPS for security
+> supports transport-level security (TLS/SSL) and allows for additional authentication and authorization mechanisms
+
+11. Code Generation
+> code generation is optional and can be done with tools like Swagger Codegen
+> automatic code generation for client and server, providing a consistent API contract
+
+12. Compatibility
+> widely adopted and compatible with virtually any platform or language
+> supports multiple programming languages but may require gRPC-specific librarires
+
+------------------------------------------
+Advantages of gRPC
+> Performance (10x faster)
+> Streaming
+> Code Generation (based on language compatiblity)
+> Language agnostic
+> Service Discovery
+> Security
+
+Disadvantages of gRPC
+> Non-human readable format (binary serialization)
+> limited browser support (we need in-between proxy like express which can be used as client gRPC)
+> no Edge Caching (because of POST method)
+> steeper learning curve
