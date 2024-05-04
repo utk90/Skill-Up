@@ -1,0 +1,19 @@
+{
+  "name": "handson",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "jsdom": "^24.0.0"
+  },
+  "dependencies": {
+    "puppeteer": "^22.7.1"
+  }
+}

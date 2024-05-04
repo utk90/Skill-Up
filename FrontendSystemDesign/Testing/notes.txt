@@ -1,0 +1,91 @@
+Testing of frontend applications
+> crucial to ensure that the UI works as intended and provides a positive UX
+> role of developer is to develop > test > maintain > protect and keep building more
+
+1. Unit testing 
+- involves testing individual components or functions in isolation to ensure they work correctly
+- Tools: Popular unit testing tools for JS include Jest, Mocha, Jasmine
+
+2. Integration testing
+- focuses on verifying that different components or modules work together as expected
+  when integrated
+- Tools: Testing libraries like Cypress, Selenium and Puppeteer can be used for integration testing
+
+3. Functional testing 
+- evaluates the application's features and functionality from an end-user perspective
+- Tools: Selenium, Cypress and Playwright are commonly used for functional testing
+
+4. End-to-End (E2E) testing
+- involves testing the entire application flow, from the user interface to the backend, to ensure all
+  components work together seamlessly
+- Tools: Cypress, Selenium, Playwright are commonly used for E2E testing
+
+5. Regression testing
+- ensure that new code changes do not introduce bugs or break exisitng functionality
+- Tools: automated testing tools can be used for regression testing, and CI/CD pipelines often includes
+  regression test suites
+
+6. Performance testing
+- assesses the speed, responsiveness and overall performance of the frontend application under different
+  conditions and in desktop and mobile
+- Tools: Lighthouse, Google PageSpeed Insights and WebPageTest can be used for performance testing
+
+7. Accessibility testing
+- ensures that the application is usable by people with disabilities and complies with accessbility standards
+- Tools: Lighthouse, Axe and Pa11y are popular tools for accessbility testing
+
+8. Cross-Browser testing
+- checks the application's compatibility and functionality across different web browsers
+- Tools: BrowserStack, CrossBrowserTesting and SauceLabs are examples of platforms that provide cross-browser
+  testing capabilities
+
+9. Usability testing
+- evaluates how easily users can interact with and navigate through the application
+- Tools: usability testing often involves manual testing and user feedback
+
+10. Security testing
+- identifies and addresses vulnerabilities in the application, protecting it from potential threats
+- Tools like OWASP ZAP, Burp Suite, and Snyk
+
+11. Localization and Internationalization testing
+- ensure that the application works correctly in different languages and regions
+- Tools: Manual testing is often involved in checking language translations and regional settings.
+  Effective testing strategies often involve a combination of automated and manual testing methods to
+  thoroughly assess the frontend application's quality and reliability
+
+12. A/B testing
+- also know as split/bucket testing, is a method used to compare two versions of a webpage or application to 
+  determine which one perform better. It is a statistical experiment in which different variations of a
+  page or feature are presented to users randomly, and their responses are analyzed to determine which 
+  variation is more effective
+- data driven decisions
+- Tools: Wasabi (deprecated) (Intuit developed AB testing tool)
+
+13. TDD (Test-Driven Development)
+- a software development strategy in which tests are written before the actual code that needs to be implemented
+- TDD follows a cycle of steps: write a test, make the test pass, and then refactor the code
+
+-------------------------------------------------------------------------------
+Unit Testing & Integration Testing 
+- Jest testing library
+  > file named as abc.test.js or abc.spec.js or kept inside __test__ folder is treated as testcase file
+  > used for unit-testing
+
+Automation Testing
+- E2E testcases
+- Tools: Puppeteer, Cypress, Selenium
+
+-------------------------------------------------------------------------------
+Performance testing
+1. Dev-tools Performance tab -> click on reload (profiling) > check LCP, FCP, loading of scripts
+2. Lighthouse (by Google) -> check auto generated report of Performance, Accessibility, SEO, Best practices
+3. PageSpeed Insights (gives performance metrics)
+4. WebPage Test (gives performance metrics)
+
+-------------------------------------------------------------------------------
+Test Driven Development
+- Red > Green > Refactor
+
+-------------------------------------------------------------------------------
+Security
+- Burp suite can be used to proxy client request and the request can be manipulated in-between
