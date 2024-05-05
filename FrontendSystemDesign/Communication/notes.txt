@@ -1,0 +1,106 @@
+Communication
+- Short Polling
+- Long Polling
+- WebSocket
+- Server Sent Event
+- Webhook
+
+Popular Interview Topics
+- Long polling vs Webhook vs WebSocket
+- Unidirectional vs Bidirectional
+- WebSocket Protocol
+- Long polling vs Server-Sent Event
+- Security aspects
+
+---------------------------------------------------------------------------------------------
+
+Short Polling
+- Client regularly checks for updates by making request to server
+    - short live connection
+    - no persistent connection
+    - less resource utility
+    - problem with scale
+- Usecases
+    - Real time system
+    - notification
+    - cricinfo
+    - analytics
+    - version update
+
+---------------------------------------------------------------------------------------------
+
+Long Polling
+- Single long lived connection
+- Connection is active until new get received/timeout
+- cons: large number of connection more the load
+- Usecases
+    - Real time collaboration
+
+---------------------------------------------------------------------------------------------
+
+WebSocket
+- Full Duplex communication
+- Single long live TCP connection
+- Continuous bi-directional communication
+    > client sends handshake request (HTTP upgrade)
+    > server opens the connection
+    > bidirectional communication active
+    > connection closed
+- wss (is ws secured)
+- data transfered in frames
+- 101 switching protocols
+- Usecases
+    - Analytics
+    - Financial trading
+    - Collab (real time editing eg. Google sheet)
+    - Online gaming
+- Challenges
+    - resource usage
+    - connection limits
+    - sticky sessions
+    - load balancer
+    - authentication
+    - firewall/proxy
+    - scaling
+    - testing/debugging
+    - backward compatibility
+
+---------------------------------------------------------------------------------------------
+
+Server Sent Event
+- long live unidirectional communication
+- single HTTP connection
+    > client request to the server 
+    > server sends the event to the client
+    > connection closed
+- connection: keep-alive
+- event-stream
+- event | data | id (id used to retry)
+- Usecases
+    - feeds
+    - notification
+    - monitoring dashboard
+- Challenges
+    - browser compatibility
+    - connection limit
+    - connection timeout
+    - background tab behavior
+    - resource utilization
+    - load balancer
+    - sticky connection
+    - proxy/firewall
+    - testing
+    - broadcasting
+
+---------------------------------------------------------------------------------------------
+
+WebHook
+- Reak time communication
+- Event driven
+- Post Rest API (payload, authorization-secret)
+- retry
+- verification/acknowledge
+- Usecases
+    - notification system
+    - data synchronization
+    - automation
