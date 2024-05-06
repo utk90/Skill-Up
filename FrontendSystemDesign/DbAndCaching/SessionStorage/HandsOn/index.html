@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Session Stoarge Notes App</title>
+</head>
+
+<body>
+    <input type="text" id="note-text" placeholder="write a note" autocomplete="off" />
+    <button onclick="addNote()">Add</button>
+
+    <div id="notes-board"></div>
+
+    <script>
+        const inputEl = document.getElementById('note-text');
+        const boardEl = document.getElementById('notes-board');
+        let noteList = JSON.parse(sessionStorage.getItem('notes')) || [];
+
+        function displayNotes() {
+            boardEl.innerHTML = '';
+            noteList.forEach(item => {
+                const li = document.createElement('li');
+                li.textContent = item;
+                const button = document.createElement('button');
+                button.textContent = 'X';
+                button.addEventListener('click', function () {
+                    removeNote(item);
+                });
+                li.appendChild(button);
+                boardEl.appendChild(li);
+            });
+        }
+
+        function addNote() {
+            displayNotes();
+
+            noteList.push(inputEl.value);
+
+            boardEl.appendChild(`<li>${inputEl.value}<button onclick="removeNote(${inputEl.value})">X</button></li>`);
+
+            inputEl.value = '';
+
+            sessionStorage.setItem('notes', JSON.stringify(noteList));
+        }
+
+        function removeNote(noteVal) {
+            noteList = noteList.filter(note => note !== noteVal);
+            sessionStorage.setItem('notes', JSON.stringify(noteList));
+
+            displayNotes();
+        }
+
+        displayNotes();
+
+    </script>
+</body>
+
+</html>

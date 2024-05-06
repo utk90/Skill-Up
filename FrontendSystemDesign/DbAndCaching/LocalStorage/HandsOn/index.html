@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dark/Light mode toggle</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <button id="toggle-btn" onclick="toggleTheme()">Toggle Mode</button>
+    <script>
+        const toggleBtn = document.getElementById('toggle-btn');
+        const bodyEl = document.body;
+
+        function toggleTheme() {
+            const oldMode = localStorage.getItem('mode');
+            const newMode = oldMode === 'dark' ? 'light' : 'dark';
+            bodyEl.classList.value = newMode;
+            localStorage.setItem('mode', newMode);
+            console.log('calledlled', newMode)
+        }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,90 @@
+- HTTP caching
+- API caching
+- Service Worker caching 
+- Database caching
+    - LocalStorage
+    - SessionStorage
+    - Cookie
+    - IndexedDB
+
+------------------------------------------------------------------------------------------------
+Interview topics
+- LocalStorage vs SessionStorage
+- Cookie vs LocalStorage
+- Can we access cookies using Javascript?
+- Have you used indexedDB? in which all scenarios?
+- How can assets be cached?
+- Can we cache API response?
+
+------------------------------------------------------------------------------------------------
+Databases & Caching
+
+1. Caching technique
+
+Server ----------------> Browser ----------------> Application
+       (HTTP cache | Service Worker | API caching)  (State Management)
+
+2. Browser Databases
+    - LocalStorage
+    - SessionStorage
+    - Cookie
+    - IndexedDB
+
+3. Normalization of data
+
+------------------------------------------------------------------------------------------------
+LocalStorage
+
+- store data persistently on user device
+- setItem, getItem, removeItem, clear (window.localStorage)
+- 5MB per domain
+- performance is synchronous and non-reactive (in-memory data and behavior may not be in sync)
+- data persist across browser session and tab closures
+- key: value (value is always a string)
+- security: storage, encryption, CORS, XSS
+- when to use: user preferences, non-sensitive data
+- when not to use: large dataset, sensitive, authToken, userDetails, cross profile data (Netflix)
+
+------------------------------------------------------------------------------------------------
+SessionStorage
+
+- store data persistently
+- setItem, getItem, removeItem, clear (window.sessionStorage)
+- 5MB per domain
+- performance is synchronous and non-reactive
+- data persists, cleared when the browser session ends (tab close, window close)
+- key: value (value is always a string)
+- security: storage limit, XSS, encrypt, session exipry
+- when to use: temporary sensitive data
+- when not to use: large dataset, async, long duration
+
+------------------------------------------------------------------------------------------------
+Cookie
+
+- store data persistently
+- data can be set by client/server & cookie get transmitted via http call
+- 4KB/domain
+- Session Cookie (Expired on browser close), Persistent Cookie (Expired on defined expiry)
+- performance: HTTP req/res time can be effected due to cookie size
+- document.cookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+- server side we can use: res.setHeader('Clear-Site-Data', '"cache", "cookie", "storage"')
+- data persistence: expiration date, expires on browser close or meeting expiry date
+- key: value (value is always a string)
+- security: httpOnly, configure expiry, sameSite attribute, domain/path, secure, XSS, CSRF
+- when to use: authorization, light data > user preference
+- when not to use: large dataset, don't put blindly sensitive data
+
+------------------------------------------------------------------------------------------------
+IndexedDB
+
+- client side storage for data persistent
+- indexedDB.open(), transaction(), objectStore
+- > 100MBs, large dataset
+- asynchronous non-blocking
+- persists across browser session
+- can be accessed by WebWorker
+- key: value(value os any complex data structure like file/blob), create indexes for performance
+- security: encryption, XSS, Auth, Clean up data on logout
+- when to use: large dataset, data cache, offline service(to show lot of history data)
+- when not to use: secure data/sensitive data storage, small data, sync operation
+- dexie library can be used to implement indexedDB operations
