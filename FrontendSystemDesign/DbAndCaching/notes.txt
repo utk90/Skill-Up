@@ -88,3 +88,105 @@ IndexedDB
 - when to use: large dataset, data cache, offline service(to show lot of history data)
 - when not to use: secure data/sensitive data storage, small data, sync operation
 - dexie library can be used to implement indexedDB operations
+
+------------------------------------------------------------------------------------------------
+Normalization
+
+- What?
+    - flattening of data structure
+    - storing entities separately
+    - relationships with unique ids
+
+- Why?
+    - remove redundancy
+    - efficiency
+    - simplifies nested relationship
+    - enhanced caching
+    - better scalability
+
+Eg:
+student = {
+    id: 1,
+    name: "Utkarsh",
+    city: "New Delhi",
+    college: "cg1"
+}
+
+college = {
+    id: "cg1",
+    name: "MAIT",
+    pincode: 110086
+}
+
+------------------------------------------------------------------------------------------------
+HTTP Caching 
+- to improve UX and webpage performance we leverage browser cache to avoid server request
+- client will first check and fetch resource present on browser, if required, then only will make server request for the resource
+- web resources (eg: js, css, images, fonts) caching
+- improve speed/performance of app
+
+Headers
+- Cache-control (max-priority P0)
+- Expires (P1)
+- Last-Modified (P2)
+- Etag (P2)
+
+------------------------------------------------------------------------------------------------
+Service worker Caching
+- sits between the browser and network layer
+- behaves like a proxy and decides whether to take the request to cache or network
+- Page ---> ServiceWorker ---> Cache or Network ---> if Network then store the data in cache (for next time) ---> Page
+- Setup steps
+    - Installing
+    - Installed
+    - Activating
+    - Activated
+
+------------------------------------------------------------------------------------------------
+API Caching
+- supported by libraries
+    - ReactQuery (TanStack)
+    - SWR
+    - Axios
+    - Apollo Client
+- fetchPolicy/networkPolicy
+    - cache-first: data available in cache return the data
+    - network-only: will not check cache and will make network request
+    - cache-and-network: fetch the data from cache, in background make network call, update cache data and reflect it to client
+    - cache-last: first network call, if not present will check data in cache and return
+    - no-cache: make network call and don't cache the data
+
+------------------------------------------------------------------------------------------------
+State Management
+- in-memory caching and the data vanishes on reload
+- Redux
+- Mobx
+- ContextAPI (React)
+- VueX (VueJs)
+- NgRx (Angular)
+- Zustand (React)
+
+Redux
+View/UI ---dispatch---> Action ------> Reducers (logic part) ------> Store ---subscribe---> View/UI
+
+Mobx concepts
+Action ---changes---> observable (state) ---updates---> computed ---notifies---> reaction ------> side-effects
+
+ContextAPI
+- prop-drilling make application difficult to maintain and scale and sometimes cause unnecessary re-renders
+- Context Data Flow
+    - Wrap the app with Provider and the state that needs to be shared
+    - any component present in n-th hierarchy can consume/modify the state, i.e, Consumer
+
+VueX
+- similar to Redux but internally use Flux
+- Vue components ---dispatch---> Action ---commit---> Mutations ---mutate---> state ---render---> Vue components
+
+NgRx
+- similar to Redux, just the Action can internally do processing (make network call or etc.) then pass it  reducer
+- selectors are used to re-render the component
+
+Zustand
+- light-weight than Redux
+- easy to use
+- using create function we can create store and can use that function in application to access the store

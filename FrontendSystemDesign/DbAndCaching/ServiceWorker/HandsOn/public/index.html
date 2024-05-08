@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service worker caching</title>
+</head>
+
+<body>
+    <img src="chart.png" alt="stock-chart">
+    <script src="app.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker
+                .register('/sw.js')
+                .then(registration => {
+                    console.log('Service worker registered with scope:',
+                        registration.scope
+                    )
+                })
+                .catch(err => {
+                    console.log('Service worker registration failed', err)
+                })
+        }
+    </script>
+</body>
+
+</html>

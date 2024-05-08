@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTTP Caching</title>
+</head>
+
+<body>
+    <button onclick="fetchRecent()">Fetch latest</button>
+    <img src="chart.png" alt="stock-chart" id="cachedImage">
+
+    <script>
+        function fetchRecent() {
+            const imgEl = document.getElementById('cachedImage');
+            // Generate a random query parameter to bypass caching
+            const randomQuery = Math.random().toString(36).substring(7);
+
+            // update the image source with the new query parameter
+            imgEl.src = `chart.png?${randomQuery}`;
+        }
+    </script>
+</body>
+
+</html>
