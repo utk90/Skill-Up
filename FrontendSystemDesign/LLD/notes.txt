@@ -1,0 +1,30 @@
+Component Design
+- modular, reusable, readable
+- single responsibility principle (SRP)
+
+----------------------------------------------------------------------------------------------------------------------------------
+Config Driven UI
+- config file (JSON) decides how the page will look
+- configs are decided by backend (backend driven UI)
+- components are compatible to handle dynamic config
+- same code multiple UI (customizable)
+
+----------------------------------------------------------------------------------------------------------------------------------
+Shimmer UI
+- to improve UX
+- better way to show loading state of the application
+- dummy layout
+
+----------------------------------------------------------------------------------------------------------------------------------
+Routing & Protected Routes
+
+----------------------------------------------------------------------------------------------------------------------------------
+State Management
+
+----------------------------------------------------------------------------------------------------------------------------------
+Multi-language support
+
+----------------------------------------------------------------------------------------------------------------------------------
+Infinite scroll
+
+Nested Comment

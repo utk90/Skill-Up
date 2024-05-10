@@ -1,0 +1,9 @@
+.open-box {
+    height: 100px;
+    background-color: green;
+}
+
+.close-box {
+    height: 40px;
+    background-color: red;
+}

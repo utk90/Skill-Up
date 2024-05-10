@@ -1,0 +1,201 @@
+Performance
+> low application performance can due to client, server, network, etc.
+- why performance?
+- performance metric
+- measuring performance
+- network optimization
+- asset optimization
+- React optimization
+- Build optimization
+- Rendering pattern
+
+---------------------------------------------------------------------------------------------------
+Why performance is important?
+- user experience
+- productivity
+- customer statisfaction
+- revenue and profitability
+- operational costs
+- competitive advantage
+- Google ranking based on performance
+- business metrics
+    - session time
+    - bounce rate
+
+Understanding your users (check cloudflare radar)
+- device
+- network quality
+- CPU & GPU
+
+---------------------------------------------------------------------------------------------------
+Performance monitoring
+- Core Web Vitals
+    - LCP (Largest Contentful Paint) ---> (Loading) (< 2.5s good, 2.5-4.0s need improvement, > 4.0s poor)
+    - FID (First Input Delay)        ---> (Interactivity) (< 100ms good, 100-300ms need improvement, > 300ms poor)
+    - CLS (Cumulative Layout Shift)  ---> (Visual stability) (< 0.1 good, 0.1-0.25 need improvement, > 0.25 poor)
+    - INP (Interaction to Next Paint) ---> (Worst time to interaction paint) (< 200ms good, 200-500ms need improvement, > 500ms poor)
+- Browser Centeric Metric
+    > Time to first byte (TTFB) ---> how much time server took to send the response (processing DB + network establish + delay)
+    > Network requests
+    > DNS resolution
+    > Connection time
+    > DOM Content Loaded
+    > Page Load
+- User Centric Metric
+    > First Contentful Paint (FCP)
+    > Largest Contentful Paint (LCP)
+    > First Input Delay (FID)
+    > Interaction to Next Paint (INP)
+    > Total Blocking Time (TBT) (time between FCP and Time to Interactivity (TTI))
+    > Cumulative Layout Shift (CLS)
+
+---------------------------------------------------------------------------------------------------
+Monitoring Tools 
+- Developer Mode
+    > Lighthouse
+    > Network tab
+    > Performance tab
+- Simulated Data
+    > webpagetest.org
+- Real User Data
+    > CRUX (Chrome Dataset)
+    > PageSpeed.web.dev
+    > requestMetrics.com
+    > clarity.microsoft.com
+    > NewRelic
+    > Sentry
+    > Google Analytics
+
+---------------------------------------------------------------------------------------------------
+Network Optimization
+- Critical Rendering Path
+- Minimize the HTTP requests
+- Async loading of JS: async/defer
+- Avoid redirection
+- Resource Hinting
+- Fetch priority
+- Early Hints
+- HTTP upgrade methods (http1.1 vs http2 vs http3)
+- Compression: brotli/gzip
+- HTTP caching: Cache Control
+- Caching using Service Worker
+
+Critical Rendering Path
+- CSS: Render blocking
+- JS: Parser blocking
+- HTML - DOM ------> Javascript <------ CSSOM - CSS
+                     Render Tree
+                        Style
+                        Layout
+                        Paint
+                        Compositel
+                        Display
+
+Minimize Network Requests
+- Challenges
+    - Connection Time (TCP, SSL)
+    - Browser Limit per domain (6-10 max parallel calls can be made)
+- Solution
+    - Inline CSS
+    - Inline JS
+    - Base64 for image
+    - SVG for image
+
+Async Javascript
+- <script>:         HTML parsing ------> JS parse + JS execute ------> HTML parsing
+- <script async>:   HTML parsing ------> HTML parsing + JS parse ------> JS execute ------> HTML parsing
+- <script defer>:   HTML parsing ------> HTML parsing + JS parse ------> HTML parsing ------> JS execute 
+
+Avoid Redirection
+- Avoid redirection from HTTP to HTTPS
+- To avoid redirection make site registered on hstspreload.org
+- security
+
+Resource Hinting
+- resource prehints runs in parallel to HTML parsing
+    - preconnect: connect to specific cross origin server in advance 
+    <link rel="preconnect' href="https://cdn.glitch.global" crossorigin >
+    - dns-prefeth: does DNS lookup in advance 
+    <link rel="dns-prefetch" href="https://cdn.glitch.com" crossorigin >
+    - preload: initiate early request to resource for rendering the page 
+    <link rel="preload" href="https://cdn.glitch.global/hbtre-54t53-5ght/image-1.jpg" as="image" >
+    - prefetch: load resources which are needed in near future with priority - future navigation
+    <link rel="prefetch" href="/next-page.css" as="style" >
+    - prerender: loads entire page and all its dependency in background with displays hidden
+    <link rel="prerender" href="blog.html" >
+
+
+- same domain CSS, JS
+- cross domain CSS, JS, fonts
+- load image after API response
+- fonts from CSS file
+
+Resource Hint Priority
+- <!-- Lower priority only for non-critical preloaded scripts -->
+- <link rel="preload" as="script" href="critical-script.js">
+- <link rel="preload" as="script" href="/js/script.js" fetchpriority="low" >
+
+- <!-- Preload CSS with blocking other resources -->
+- <link rel="preload" as="style" href="theme.js" fetchpriority="low" onload="this.rel="stylesheet"" >
+- Loading images on priority
+- <img src="https://cdn.glitch.global.com/img-4.jpg" alt="img-4" fetchpriority="high" />
+
+Early Hints
+- server sends assets hints that needs to be loaded inorder to render html to the client (103 Early Hints)
+- server needs to be equipped inorder to handle early hint capability
+- client can load the resource prehand inorder to render the HTML fast
+
+HTTP upgrade (Http1.1 vs Http2 vs Http3)
+- HTTP protocol stack transition and comparison
+- check image HttpProtocolStackTransition.png
+- check image HttpProtocolTabularComparison.png
+- HTTP/1.1 only allow parallel loading of 6-7 images at max. This impacts core web vitals of the page
+- spdy is used to setup HTTP/2.0 server
+
+Compression
+- brotli vs gzip
+- brotli is better than gzip
+- Brotli performance is 
+    > 14% smaller than gzip for JS
+    > 21% smaller than gzip for HTML
+    > 17% smaller than gzip for CSS
+- compression can used at runtime and buildtime
+- build-time compression files can be put under .br extension and server middleware methods can be modified to use .br extension files
+- Brotli compression steps
+    Accept-Encoding Header: When the client (browser) sends a request to the server, it includes an Accept-Encoding header in the 
+    request. This header informs the server about the compression algorithms that the client supports.
+    For Brotli support, the header would include br, indicating that the client supports Brotli compression.
+    Content-Encoding Header: When the server responds to the client's request, it includes a Content-Encoding header in the 
+    response. If the server has compressed the resource using Brotli, it includes Content-Encoding: br in the response header.
+    Decompression: Upon receiving the response, if the client's browser supports Brotli compression and the Content-Encoding 
+    header indicates that the resource is compressed using Brotli, the browser decompresses the resource using Brotli decompression
+
+Caching
+- reducing network request by caching methods
+- Cache Policy (cache-control, lastModified, eTag, expires)
+- Service worker
+
+---------------------------------------------------------------------------------------------------
+Rendering Patterns
+    - Client (CSR)
+    - Server
+        - Dynamic (SSR)
+        - Static (SSG)
+    - Client + Server -> React Server Component (RSC)
+    - for SSR, SSG (use page-router mode)
+    - refer images (CSRvsSSR.png, SSG.png, CSRvsSSRvsSSGTabularComparison.png)
+
+React Server Component
+- use app-router mode
+- by default everything is SSR
+- "use client" is used at the top of the page to make it the component CSR
+- Benefits
+    - Data fetching at server side
+    - Security
+    - Caching at server side
+    - Bundle size (optimization can be done server side)
+    - Initial Page load
+    - Streaming (part of the page early and loads the page in chunks)
+    - SEO
+- Drawbacks
+    - hooks cannot be used server side

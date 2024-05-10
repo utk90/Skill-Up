@@ -1,0 +1,7 @@
+.comment-box {
+    border-left: 1px solid black;
+}
+
+.nested-container{
+    padding-left: 20px;
+}
