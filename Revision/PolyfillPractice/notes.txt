@@ -1,0 +1,13 @@
+Polyfills
+1. call
+2. apply
+3. bind
+4. map
+5. filter
+6. reduce
+7. debounce
+8. throttle
+9. Promise.all
+10. Promise.any
+11. Promise.allSettled
+12. Promise.race
