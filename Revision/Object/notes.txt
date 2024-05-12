@@ -1,0 +1,12 @@
+Object related problems
+1. deepFlatten
+2. compareTwoObjOrArr
+3. mergeObjects
+4. groupBy
+5. stock max profit
+6. maxSubarray (kadane)
+7. mergeIntervals
+8. valid parenthesis
+
+9. stack
+10. queues
