@@ -1,0 +1,146 @@
+High level Design
+- phase in software development life cycle (SDLC) where the overall architecture and structure of a software system or
+  application are planned and documented comprehensively
+- essential step that bridges the gap between the requirements specification and the actual implementation of the system
+- goal of HLD is to provide a blueprint or roadmap for how the system will function and how its various components will interact
+
+Key Aspects
+- Requirement analysis
+    - Functional
+        - Product Manager (Login, Dashboard, Search, Features etc.)
+    - Non functional
+        - Architect/Tech Lead (Device support, Auth, Security, Accessibility, SEO, Offline support, Multi-language support etc.)
+- System Architecture
+- Module/Component
+- Data Design/Interfaces/API Schema
+- Technology/Tech Choices
+
+Key take aways
+ - straight forward problem (Junior) & open-ended problem statement (Senior)
+ - topic doesn't decide the intent. Don't assume things. Ask clarifying questions
+ - drive the interview with interviewers intent
+ - system design isn't about creating boxes
+ - HLD system design isn't about coding
+
+ ---------------------------------------------------------------------------------------------------------------------------------
+ Photo Sharing App (Instagram)
+
+ 1. Key aspects
+  - Functional requirement analysis
+    - Feed management
+        - List
+        - Create post
+            - Edit/upload
+            - Filters
+        - Reels
+            - List
+            - Create reels
+        - Stories
+            - List
+            - Create stories
+        - Comment & Like
+        - Browse
+        - Messages
+        - Account management 
+        - Profile - followers
+  - Non-Functional requirement analysis
+    - Security
+    - Device support
+    - Auth
+    - SEO
+    - Optimization
+    - Accessibility
+    - Offline support
+    - Testing
+    - i18n/10n
+    - Deployment
+
+2. Architecture Design - refer screenshot of architectureDesign.png
+
+3. Component Architecture
+- Feedlist
+    - Feed
+        - Reaction
+        - Comment
+        - Caption
+        - User Details
+        - PostBody
+    - Feed/Post creation
+        - Upload
+        - Editing
+        - Filter
+        - Caption
+        - Tagging
+        - Location
+        - ImageComponent
+        - VideoComponent
+
+4. Data Model
+- Post
+    - id
+    - caption
+    - createdAt
+    - updatedAt
+    - userId
+    - mediaId[]
+    - caption
+- FeedList
+    - postId[]
+    - totalPosts
+- User
+    - id
+    - name
+    - profilePhotoUrl
+- Media
+    - id
+    - type (image/video)
+    - url
+
+5. API
+- FeedList
+    - Request: /feedList?pageNo=1&pageSize=20 | GET
+    - Response: {
+        data: {
+            feeds: [],
+            totalPosts: number,
+            currentPageNumber: number,
+            currentPageSize: number
+        },
+        error: {}
+    }
+- Create Post
+    - Single API: /createPost
+    - Separate API
+        - /upload
+        - /createPost
+
+6. Optimization
+- Asset optimization
+    - Image
+        - image format (WebP)
+        - srcset (to load compatible resolution image on device)
+        - userAgent
+        - dpr (Device Pixel Ratio)
+        - Device/internet connectivity
+        - Prefetch images
+- Feed optimization
+    - SSR (ATF - Above the Fold) (first page SSR and followed by CSR pages)
+    - Lazy loading
+    - Infinite scroll (Intersection Observer)
+    - Virtualization
+    - Code splitting JS
+    - Loading shimmers
+    - Perserving feed scroll position
+    - Web workers (to avoid block main thread)
+    - Optimistic updates (user can do stuff in the background during post creation)
+
+7. implementation
+- Image editing
+    - crop/resizing (Canvas API)
+    - filters (CSS filters)
+
+- Upload File
+    - HTTP Post (multipart/form-data)
+    - base64 encoding
+    - multi selection
+    - file chunking/resumable upload

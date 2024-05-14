@@ -1,4 +1,4 @@
-Object related problems
+Problems
 1. deepFlatten
 2. compareTwoObjOrArr
 3. mergeObjects
@@ -7,6 +7,14 @@ Object related problems
 6. maxSubarray (kadane)
 7. mergeIntervals
 8. valid parenthesis
-
-9. stack
-10. queues
+9. stackUsingQueue
+10. queueUsingStack
+11. prodExpSelf
+12. revArrInPlace
+13. twoSum
+14. threeSum
+15. missingAndRepeated **
+16. sort012 (dutchNationalFlag)
+17. rotateArray
+18. removeDuplFromSorted **
+19. rotateImage
