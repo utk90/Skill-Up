@@ -1,0 +1,28 @@
+{
+    "data": [
+        {
+            "type": "folder",
+            "name": "Folder 1",
+            "files": [
+                {
+                    "type": "file",
+                    "name": "File 1.1"
+                },
+                {
+                    "type": "folder",
+                    "name": "Folder 1.2",
+                    "files": [
+                        {
+                            "type": "file",
+                            "name": "File 1.2.1"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "file",
+            "name": "File 2"
+        }
+    ]
+}

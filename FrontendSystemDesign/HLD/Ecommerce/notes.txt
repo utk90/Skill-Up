@@ -1,0 +1,117 @@
+E-Commerce Marketplace (Amazon, Flipkart)
+1. Configurable UI - Home Page
+2. Browse and purchase
+
+1. Requirements
+- Functional (User perspective)
+    - Browser product
+        - Search
+        - Filters
+        - Product listing page
+        - Product detail page
+    - Add to cart
+        - Cart page
+        - Change quantity
+        - Price summary
+    - Purchase product
+        - Checkout page
+        - Address 
+        - Apply Coupon
+        - Price Breakup
+- Non-functonal
+    - Device support 
+    - Auth
+    - i18n/10n
+    - SEO
+    - Optimization
+    - Security
+    - Accessibility
+    - Deployment
+    - Offline support
+
+2. Architecture - check ArchitectureOverview.png image
+
+3. Data Model
+- Product
+    - id
+    - name
+    - description
+    - assets(image/video)
+    - price(MRP, DiscountedPrice, Currency)
+- CartItem
+    - id
+    - productId
+    - quantity
+    - price(finalPrice)
+- Address
+    - id
+    - name
+    - country
+    - state
+    - street 
+    - pincode
+- Payment Summary
+    - price
+        - productPrices
+        - coupons
+        - taxes
+        - deliveryCharges
+- Coupon
+    - id
+    - Details
+    - type(Fixed/%)
+    - value
+    - rules[]
+
+4. API
+- /productList (search+filter) | POST | Response: Product[] | Pagination (Offset based pagination, Cursor based pagination)
+- /productDetail
+- /cartUpdate (add, delete, change quantity)
+- /cartListing
+- /couponList
+- /priceSummary
+- /paymentGateway
+
+5. Optimization
+- Lazy loading & code splitting
+- ATF(Above the fold)
+    - defer/async
+    - prefetch
+- wenp
+- cdn/service worker
+- lazy loading image
+- image priority
+- DPI (device pixel ratio)
+- Adaptive loading (decisions based on user agent device/connection)
+
+6. SEO
+- <title> <meta>
+- OG (how the page will look on Social Media)
+- sitemap.xml (all links on one page which needs to be indexed)
+- robots.txt (what all pages need to be indexed or not indexed)
+- canonical tags
+- semantic (h1, section, nav, header, footer)
+- better page speed - better indexing
+- SSR is better for SEO
+- SSG is better
+- CSR is not good (use alternative)
+- For SEO supoort in CSR [Server is made compatible to serve prerendered static HTML to Crawler and for Client it behaves as normal CSR]
+- sharable links
+    - search/filter should be part of URL
+- Readable URL link better for SEO
+
+7. Internalization/Localization
+- <html lang="en" />
+- <link rel="alternate" hreflang="en" href="..." />
+- hreflang > a, link
+- <link rel="alternate" hreflang="x-default" href="..." />
+- RTL (Right To Left)
+    - direction (left to right, right to left)
+    - logical CSS properties (flex)
+    - :lang() css properties
+- Capablitity to change language
+- Formatting currency & dates
+- Form validation > min/max length (is different in different languages), localize error messages
+- Don't concatenate string
+- Rest API: use header Accept-Language
+- utf-8

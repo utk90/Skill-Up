@@ -1,0 +1,10 @@
+.folder-container {
+    padding-left: 10px;
+}
+
+.folder-open{
+}
+
+.folder-close{
+    display: none;
+}

@@ -1,0 +1,81 @@
+News Feed (Facebook, Twitter)
+
+1. Requirements
+- Functional requirement
+    - Create post & publish
+        - text, image
+        - tagging
+        - hashtag
+    - Liking & reaction
+    - Comment
+    - Share
+    - Browse
+- Non-functional requirement
+    - Device support
+    - Optimization
+    - SEO
+    - Logging & Monitoring
+    - Security
+    - Database & Catching
+    - Infinite scroll
+    - WYSIWYG editor
+    - Rendering approach
+
+2. Architecture
+- refer ArchitectureOverview.png
+
+3. Datamodel
+- Feed
+    - list: post[], pagination
+- Post
+    - id, created_time, updated_time, authorId, reactions, content, media: {type, url}, metaData: {tags, hashTags, locationTags}
+- User
+    - id, name, profile_photo
+
+4. Implementation details
+- Rendering Approach
+    - SSR, CSR
+- Infinite Scroll (Pagination)
+    - Offset based
+        {size, page, totalPosts}
+    - Cursor based
+- Infinite Loading
+    - Scroll event
+    - Intersection Observer API
+- Virtualization (Limiting DOM nodes in DOM tree) (if the user scrolls 100 feeds then all 100 feed DOM nodes are not present in DOM tree)
+    - Less browser painting
+    - Virtual DOM reconcillation
+    - Light-weight real DOM
+- Shimmer
+    - SVG
+    - CSS3
+    - GIF
+- Preserving scroll position
+    - SPA > Cache data > No server trip
+- Mnetions & Hashtags
+    - Input/Textarea X
+    - Div > contenteditable
+    - Div > WYSIWYG (XSS attack)
+    - Hashtags > #learnWithChirag, mention > [[#userId123: Chirag]]
+- Optimistic update
+    - SWR, ReactQuery, ApolloClient
+- Timestamp Rendering
+    - Server
+    - Client (UTC) - Intl. DateTimeFormat
+    - Relative time rendering
+- Icon rendering
+    - SVG
+    - Separate images
+    - Font icon
+    - Sprite images
+- Image rendering
+    - CDN
+    - WebP
+    - srcset
+    - DPI (device pixel ratio)
+    - Prefetch/low-resolution image loading
+- Commenting
+    - Recursion (Depth)
+    - Cursor based pagination
+    - Optimistic
+    - Lazy loading (emoji, mentions, tags)
