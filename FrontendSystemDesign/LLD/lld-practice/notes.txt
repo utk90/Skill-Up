@@ -5,7 +5,9 @@ LLD problems
 3. ToDo in Js
 4. LoginForm in Js
 5. Confluence Tree
-
-5. Countdown timer
-6. Modal (using React Portals)
-7. Drag-drop
+6. Tic Tac Toe
+- Auto suggestion
+- Infinite scroll (using intersection observer)
+- Countdown timer
+- Modal (using React Portals)
+- Drag-drop
