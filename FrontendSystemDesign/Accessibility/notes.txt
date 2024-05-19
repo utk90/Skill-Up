@@ -1,0 +1,154 @@
+Accessibility
+- What?
+- Why?
+- AT (Assistive technology)
+- Accessible standards
+- ARIA
+- Screen reader
+- Focus management
+- Contrast theme
+- Tooling
+- Examples
+
+a11y
+- web accessibility means that people with disabilities can use the web (perceive, understand, navigate, interact & contribute to the web)
+- goal of web accessibility is to eliminate barriers that may prevent people with disabilities from interacting with or accessing information on the web
+
+Accessibility Standards
+- WCAG (Web Content Accessiblity Guideline)
+    - Level A (minimal compliance)
+        - no keyboard traps
+        - navigable with a keyboard
+        - non-text content alternatives
+        - video options
+        - meaning is not conveyed through shape, size, color etc. alone
+    - Level AA (acceptable compliance)
+        - color contrast is, in most instances, at least 4:5:1
+        - alt text or a similar solution is used for images that convey meaning
+        - navigation elements are consistent throughout the site
+        - form fields have accurate labels
+        - status updates can be conveyed through a screen reader
+        - headings are used in logical order
+    - Level AAA (optimal compliance)
+        - sign language interpretation for audio or video content
+        - color contrast is at least 7:1 in most instances
+        - timing is not an essential part of any activity
+        - context-sensitive help is available
+- WebAIM (WCAG Principles)
+    - Perceivable
+    - Operable
+    - Understandable
+    - Robust
+
+------------------------------------------------------------------------------------------------------------------------------------
+Screen Reader
+- Windows (CTRL + WinKey + ENTER), NVDA (Free open source, third party)
+- MAC (CMD + F5)
+- Chrome Extension
+
+Accessibility for Screen Reader
+- DOM + ARIA ---> accessiblity tree
+- Accessible HTML
+    - Document structure
+        - <header>, <nav>, <main>, <section>, <article>, <footer>
+        - heading (<h1> to <h6>)
+        - lists (<ul><ol><li>)
+        - links & button (<a><button>)
+        - form elements (<label>, <input type="email">)
+        - tables (<caption><thead><tbody><tfoot><th><tr><td>)
+        - images (<img alt="" />)
+        - Audio/Video (Transcript, Open Text Captions)
+        - CSS class hidden
+- ARIA (Accessible Rich Internet Applications)
+    - Form: Labels
+        - aria-label
+        - aria-labelledby
+        - aria-describedby
+    - Roles (role="button") (to make div as button)
+    - Properties (aria-describedby="id-ref")
+    - States (aria-pressed="true")
+    - Live Regions (aria-live="assertive | polite | off")
+    - Avoid using role, aria, unnecessary use of div, they may mislead screen reader
+
+------------------------------------------------------------------------------------------------------------------------------------
+Focus Management
+- Tab navigation
+- Keyboard shortcuts
+- Skip links
+- Active element
+- Tab trapping
+- Page navigation
+
+Tab navigation
+    - Tab -> moves forward one active element to another
+    - Shift + Tab -> moves backward one active element to another
+    - Arrows -> Cycle through related controls
+    - Spacebar -> Toggles states and moves down the page
+    - Shift + Spacebar -> moves up the page
+    - enter -> triggers specific controls
+    - escape -> dismisses dynamically displayed objects
+    - <a>, <button>, <input>, <select>, <textarea>, <iframe> has by default tabbing
+        for explict tabbing, tab="0 | 1,2,3 | -1" (0 normal order, negative values means don't include element in tabbing)
+
+Keyboard shortcuts
+    - Implement using JS
+
+Skip links
+    - To skip over headers links quickly/jump right to context
+
+Active Element
+    - A modal is about to be opened
+    - Store the current news item
+      const currentItem = document.activeElement;
+    - Open the modal
+    - On modal close, refocus on the news item they had open currentItem.focus()
+
+Tab trapping
+    - if the modal is open, focus should always be inside modal
+
+Page navigation
+    - Skip link
+    - aria-live
+    - contentElement.focus()
+
+------------------------------------------------------------------------------------------------------------------------------------
+Contrast & 400% Zoom
+    - Font size
+        - small text (<18px) -> minimum contrast ratio 4.5:1
+        - large text (>=18px) -> minimum contrast ratio 3:1
+    - em instead of px for font
+    - prefers-color-scheme & prefers-contrast
+    - use accessibility contrast themes
+
+------------------------------------------------------------------------------------------------------------------------------------
+Tools & techniques
+    - Automation
+        - AXE (windows)
+        - Espresso (android)
+        - eslint-plugin-jsx-ally (linter)
+        - accessibility plugin
+    - Manual
+    - Out of box
+
+Ways to recall
+    - use semantic HTML
+    - add labels to form elements
+    - use contrasting colors
+    - write descriptive links
+    - keep pinch and zoom alive (<meta name="viewport" statement: user-scalable="yes". Avoid user-scalable="no" and maximum-scale=1 at any cost)
+    - provide text for non-text content (use alt incase of images)
+    - show where your :focus is
+    - understanding without color
+    - caption video and audio
+    - use WAI-ARIA only if necessary
+
+Test for accessiblity
+    - Zoom to 400%
+    - Check keyboard navigation
+    - Turn your monitor off and use a screen-reader
+    - Run lighthouse accessibility audit
+    - Deactivate CSS
+
+------------------------------------------------------------------------------------------------------------------------------------
+How to fix accessibility?
+- use lighthouse tool and fix the errors showing up in lighthouse
