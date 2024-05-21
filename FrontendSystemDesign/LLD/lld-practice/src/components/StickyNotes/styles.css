@@ -1,0 +1,44 @@
+.notes {
+    height: 200px;
+    width: 250px;
+    background-color: antiquewhite;
+    border-radius: 8px;
+    border: 2px solid black;
+    text-align: center;
+    vertical-align: middle;
+}
+
+#todo-input {
+    border: 1px dotted black;
+    text-align: center;
+    font-size: 16px;
+    position: absolute;
+    left: 40px;
+    top: 90px
+}
+
+#todo-board {
+    /* display: flex;
+    flex-wrap: wrap;
+    gap: 10px; */
+}
+
+.new-notes {
+    height: 200px;
+    width: 250px;
+    background-color: antiquewhite;
+    border-radius: 8px;
+    border: 2px solid black;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+button {
+    background-color: antiquewhite;
+    border: none;
+    border-top: 1px solid black;
+    margin-bottom: 4px;
+    cursor: pointer;
+}
